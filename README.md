@@ -63,6 +63,38 @@ Le script génère un tableau de bord HTML contenant :
 - **Stabilité** : Les endpoints publics peuvent changer sans préavis. Ce tool sert à *monitorer* ces changements.
 - **Usage** : Éducatif et recherche. Non conçu pour un usage production critique.
 
+- 🔬 Test de Cas Réel : "Projet Antiviral Universel"
+- 
+Voici comment le système utilise obligatoirement tous les sites pour un seul projet :
+
+Aspiration (NCBI/Nucleotide) : L'IA détecte une nouvelle séquence de virus émergent via GBIF (zones de biodiversité à risque).
+
+Calcul Protéique (UniProt/PDB) : Elle traduit la séquence en protéine et cherche sa structure 3D.
+
+Criblage (ChEMBL/PubChem) : Elle cherche des molécules existantes capables de bloquer ce virus.
+
+Vérification Littéraire (PubMed/ArXiv) : Elle vérifie si des chercheurs ont déjà échoué sur cette piste pour ne pas perdre de temps.
+
+Corrélation de Voies (KEGG/Reactome) : Elle analyse l'impact du virus sur le métabolisme humain.
+
+Sécurité (OpenFDA/RxNorm) : Elle élimine les molécules trop toxiques.
+
+Plan Clinique (ClinicalTrials) : Elle rédige le protocole d'essai clinique idéal.
+
+Économie (World Bank) : Elle calcule le prix de revient pour une distribution mondiale.
+
+🚀 Amélioration par les Tokens IA (Multi-couches)
+Pour que ce travail soit de "très haute qualité", l'IA utilise les tokens de trois manières :
+
+Tokens de Raisonnement : Pour vérifier la logique interne (ex: "Si la protéine est membranaire, le ligand doit être lipophile").
+
+Tokens Créatifs : Pour rédiger une littérature scientifique fluide, pédagogique mais rigoureuse (niveau "Nature" ou "Science").
+
+Tokens de Code : Pour générer les scripts de calcul (BioPython, R) qui traitent les fichiers ADN.
+
+Conclusion : En forçant chaque site à être un paramètre d'une seule équation, nous créons une IA Spécialiste qui ne se contente pas de répondre à des questions, mais qui génère de la science de manière industrielle. C'est le passage de la recherche artisanale à l'usine à découvertes.
+
+
 ## 📄 Licence
 
 MIT License — Libre utilisation pour la recherche et l'éducation.
