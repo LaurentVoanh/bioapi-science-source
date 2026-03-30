@@ -15,6 +15,71 @@
 6. **Contexte Global** : WHO GHO évalue la pertinence sanitaire mondiale ; World Bank contextualise l'impact économique ; GBIF géolocalise les données écologiques ; NASA ADS/INSPIRE-HEP identifient les croisements avec la physique fondamentale.
 7. **Accessibilité** : Unpaywall signale les versions en accès ouvert ; Wikipedia (EN/FR) et Wikidata fournissent un contexte vulgarisé ; Hugging Face identifie les modèles IA associés ; EuroPMC/ArXiv proposent des préprints ou versions alternatives.
 
+### exemple de Stratégie d'Optimisation Globale
+
+**Principe :** Faire de **PubMed (Projet 1)** le point d'entrée unique. Les 34 autres projets deviennent des modules spécialisés appelés à la demande, réduisant la redondance.
+
+---
+
+### 1. Regroupement par Cluster Fonctionnel
+
+*   **Cluster Clinique (ClinVar, ClinicalTrials, OpenFDA, RxNorm)**
+    *   **Action :** Supprimer les étapes "Littérature" (PubMed s'en charge).
+    *   **Gain :** -30% de requêtes, -20% de tokens.
+    *   **Focus :** Uniquement validation réglementaire et sécurité.
+
+*   **Cluster Moléculaire (ChEMBL, PubChem, PDB, KEGG, Reactome)**
+    *   **Action :** Cache partagé des structures 3D et liaisons chimiques.
+    *   **Gain :** -50% de stockage (évite doublons PDB/PubChem).
+    *   **Focus :** Druggabilité et voies métaboliques uniquement.
+
+*   **Cluster Intégrité (CrossRef, DataCite, Zenodo, Semantic Scholar)**
+    *   **Action :** Passer en mode "Surveillance Passive". Ne s'activent que si PubMed signale une anomalie.
+    *   **Gain :** -80% de temps d'exécution (plus de scan systématique).
+
+*   **Cluster IA & Data (Hugging Face, Papers with Code, ArXiv)**
+    *   **Action :** Pré-chargement des modèles légers. Limiter l'inférence aux cibles validées par PubMed.
+    *   **Gain :** -40% de tokens (Hugging Face passe de 600k à 350k).
+
+*   **Cluster Contexte (WHO, World Bank, GBIF, Wikipedia)**
+    *   **Action :** Agrégation en une seule API "Contexte Global".
+    *   **Gain :** Réduction de 10 projets vers 1 module unifié.
+
+---
+
+### 2. Exemple de Refonte : ClinVar (Projet 2)
+
+**Avant :** 7 étapes, vérification littérature incluse.
+**Après :** 4 étapes (PubMed pré-valide).
+
+1.  **Positionnement :** Ensembl + NCBI Gene (Uniquement si variant inconnu).
+2.  **Impact :** UniProt + PDB (Sur demande).
+3.  **Sécurité :** OpenFDA + RxNorm (Check rapide).
+4.  **Rapport :** Génération directe (PubMed fournit le contexte biblio).
+
+**Nouveaux Stats :** 8 min (-33%), 250 Requêtes (-40%), 150k Tokens (-50%).
+
+---
+
+### 3. Gains Estimés sur le Catalogue
+
+| Métrique | Avant Optimisation | Après Optimisation | Gain |
+| :--- | :--- | :--- | :--- |
+| **Temps Moyen** | 15 min / projet | 9 min / projet | **-40%** |
+| **Requêtes API** | 400 / projet | 220 / projet | **-45%** |
+| **Tokens IA** | 250k / projet | 140k / projet | **-44%** |
+| **Stockage** | 45 Mo / projet | 25 Mo / projet | **-44%** |
+
+---
+
+### 4. Recommandations Techniques
+
+1.  **Orchestrateur Central :** Implémenter un routeur qui interroge d'abord PubMed. Si pas de résultat, alors appel des modules spécialisés.
+2.  **Cache Unifié :** Une seule base Redis pour les IDs (Gene, Protein, Compound) partagée par les 35 projets.
+3.  **API Gateway :** Regrouper les appels WHO/World Bank/GBIF en une seule requête asynchrone.
+4.  **IA Légère :** Remplacer les modèles Hugging Face lourds par des modèles distillés pour la classification initiale.
+
+**Résultat :** Un écosystème modulaire où PubMed est le cerveau, et les 34 autres projets sont des membres exécutants optimisés.
 ---
 
 ## 2. ClinVar (NCBI)
