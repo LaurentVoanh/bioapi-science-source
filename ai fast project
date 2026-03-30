@@ -1,0 +1,379 @@
+Voici l'architecture intégrale et développée pour les 35 projets de convergence. Chaque projet est conçu comme une unité autonome qui, dès son activation, verrouille et interroge obligatoirement la totalité des 34 autres API pour produire un résultat d'une profondeur scientifique absolue.
+
+Chaque projet est calibré pour consommer environ 100 millions de tokens par jour (3 milliards par mois) via des agents IA qui débattent, simulent et synthétisent en continu sans stockage massif (méthode de flux).
+
+1. PubMed (NCBI)
+Projet : "Le Synthétiseur Bibliographique Universel"
+
+Description : PubMed sert de point de détection. Dès qu'un article est publié, l'IA l'aspire et lance une vérification de vérité totale. Elle extrait les molécules pour les tester virtuellement via ChEMBL/PubChem, vérifie les interactions protéiques citées sur STRING/BioGRID, et valide les structures sur PDB. Elle utilise CrossRef/OpenAlex pour cartographier l'influence du papier, Unpaywall pour lire le texte intégral, et ClinicalTrials pour voir si les résultats sont déjà testés sur l'homme. Les impacts socio-économiques sont calculés via WHO GHO/World Bank et la physique fondamentale est vérifiée via NASA ADS/INSPIRE-HEP.
+
+Détails Techniques :
+
+Temps : 15 minutes par cycle de synthèse complet.
+
+Requêtes : 450 requêtes (appels récursifs sur tout le réseau).
+
+Tokens : 250 000 tokens par article (Analyse multi-agents).
+
+Stockage : 50 Mo (Cache texte éphémère).
+
+Type API : XML/E-Utilities.
+
+IA Multicouche : Agent de lecture critique + Agent de vérification croisée des faits.
+
+2. ClinVar (NCBI)
+Projet : "Le Bouclier de Précision Génomique"
+
+Description : À partir d'un variant génétique, ClinVar force l'IA à modéliser la conséquence physique. Elle consulte Ensembl/Gene pour la position, UniProt pour la fonction protéique, et PDB pour le changement de forme. Elle cherche des molécules capables de corriger ce variant sur ChEMBL, vérifie si la NASA (NASA ADS) a des données sur les mutations induites par les radiations, et regarde si le variant est lié à des espèces animales sur GBIF. La viabilité économique d'un traitement pour ce variant est analysée via World Bank.
+
+Détails Techniques :
+
+Temps : 10 minutes.
+
+Requêtes : 380 requêtes.
+
+Tokens : 180 000 tokens (Raisonnement causal).
+
+Stockage : 10 Mo.
+
+Type API : HTTPS/REST.
+
+IA Multicouche : Agent de génétique moléculaire + Agent de simulation structurale.
+
+3. NCBI Gene
+Projet : "L'Architecte de l'Ontologie Génique"
+
+Description : Pour chaque gène, l'IA crée un "jumeau numérique" en agrégeant les données de Reactome/KEGG (métabolisme), STRING (réseaux), et Wikipedia (connaissance commune). Elle interroge Hugging Face pour prédire les expressions futures, ClinicalTrials pour les liens pathologiques, et OpenFDA pour les risques de toxicité liés aux gènes. Le code de simulation est automatiquement déposé sur Zenodo avec un DOI DataCite.
+
+Détails Techniques :
+
+Temps : 8 minutes.
+
+Requêtes : 310 requêtes.
+
+Tokens : 150 000 tokens.
+
+Stockage : 5 Mo.
+
+Type API : E-Utilities.
+
+IA Multicouche : Agent d'intégration de connaissances + Agent de prédiction fonctionnelle.
+
+4. NCBI Nucleotide
+Projet : "La Sentinelle de Surveillance Virale"
+
+Description : Une séquence ADN brute active la recherche de similarité sur NCBI Protein, le repliement sur PDB/Hugging Face, et la recherche de vaccins sur PubMed/EuroPMC. L'IA calcule le risque de propagation via les données de migration de GBIF, la densité de population du WHO, et la stabilité physique de la coque virale via INSPIRE-HEP.
+
+Détails Techniques :
+
+Temps : 20 minutes (Analyse de séquence lourde).
+
+Requêtes : 550 requêtes.
+
+Tokens : 400 000 tokens.
+
+Stockage : 100 Mo (données génomiques temporaires).
+
+Type API : REST/XML.
+
+IA Multicouche : Modèle de langage génomique (DNABERT) + Agent épidémiologique.
+
+5. NCBI Protein
+Projet : "L'Ingénieur de Design Enzymatique"
+
+Description : Une protéine isolée est soumise à une analyse de survie. L'IA cherche des interacteurs sur BioGRID, des poches de liaison sur ChEMBL, et des publications sur Semantic Scholar. Elle utilise les modèles de Papers with Code pour optimiser sa fonction et vérifie si des brevets existent via CrossRef. Elle conclut par une analyse de coût de production industrielle via World Bank.
+
+Détails Techniques :
+
+Temps : 12 minutes.
+
+Requêtes : 400 requêtes.
+
+Tokens : 200 000 tokens.
+
+Stockage : 20 Mo.
+
+Type API : E-Utilities.
+
+IA Multicouche : Agent de biophysique + Agent de stratégie industrielle.
+
+6. UniProt
+Projet : "L'Annotateur Automatique Suprême"
+
+Description : UniProt sert de pivot pour transformer chaque protéine en une entité "comprise". L'IA lit Wikipedia EN/FR, extrait les faits de EuroPMC, compare avec les structures PDB, aligne sur les gènes Ensembl, et vérifie les interactions chimiques RxNorm/PubChem. L'IA génère ensuite une documentation technique exhaustive stockée virtuellement.
+
+Détails Techniques :
+
+Requêtes : 350 | Tokens : 220 000 | Temps : 7 min.
+
+7. EuroPMC
+Projet : "L'Extracteur de Vérité en Texte Intégral"
+
+Description : Utilise le Full-Text pour trouver des "signaux faibles". Si un article mentionne une plante, l'IA cherche sa géolocalisation sur GBIF, sa chimie sur PubChem, et ses effets cliniques sur ClinicalTrials. Elle valide la rigueur mathématique via ArXiv.
+
+Détails Techniques :
+
+Requêtes : 500 | Tokens : 500 000 (Lecture de PDF par IA) | Temps : 25 min.
+
+8. OpenAlex
+Projet : "Le Cartographe de la Convergence"
+
+Description : Analyse les flux de citations pour prédire quand la physique (INSPIRE) va révolutionner la biologie (PubMed). Elle utilise CrossRef/DataCite pour lier les datasets et Papers with Code pour vérifier si les algos sont implémentables.
+
+Détails Techniques :
+
+Requêtes : 600 | Tokens : 300 000 | Temps : 15 min.
+
+9. ChEMBL
+Projet : "Le Laboratoire de Pharmacologie Virtuelle"
+
+Description : Pour une molécule donnée, l'IA simule son passage dans le corps. Elle vérifie les enzymes métaboliques sur KEGG, les transporteurs sur UniProt, les effets toxiques sur OpenFDA, et la disponibilité mondiale sur WHO.
+
+Détails Techniques :
+
+Requêtes : 420 | Tokens : 250 000 | Temps : 12 min.
+
+10. ArXiv
+Projet : "Le Traducteur de Mathématiques en Médicaments"
+
+Description : Prend un nouvel algorithme sur ArXiv et tente de l'appliquer aux données de PDB ou ClinVar. Elle cherche des modèles similaires sur Hugging Face et publie les résultats sur Zenodo.
+
+Détails Techniques :
+
+Requêtes : 280 | Tokens : 180 000 | Temps : 10 min.
+
+11. CrossRef
+Projet : "Le Validateur de l'Intégrité Scientifique"
+
+Description : Vérifie chaque DOI. Si un article est cité, l'IA va voir sur Wikidata s'il n'est pas rétracté, vérifie les données sur DataCite et le code sur Papers with Code.
+
+Détails Techniques :
+
+Requêtes : 800 | Tokens : 100 000 | Temps : 5 min.
+
+12. DataCite
+Projet : "Le Mineur de Big Data Orphelin"
+
+Description : Trouve des jeux de données bruts, les analyse via des modèles Hugging Face, les relie aux protéines UniProt et aux maladies ClinicalTrials.
+
+Détails Techniques :
+
+Requêtes : 320 | Tokens : 200 000 | Temps : 15 min.
+
+13. Unpaywall
+Projet : "L'IA de Science Ouverte et Équitable"
+
+Description : Analyse uniquement la science gratuite pour créer des protocoles de soin accessibles aux pays pauvres (calculé via World Bank), en utilisant les molécules de PubChem.
+
+Détails Techniques :
+
+Requêtes : 450 | Tokens : 350 000 | Temps : 20 min.
+
+14. RCSB PDB
+Projet : "Le Géomètre de la Vie"
+
+Description : Utilise les coordonnées 3D pour prédire si une mutation ClinVar empêchera un médicament RxNorm de se fixer. Valide via les papiers de biophysique sur NASA ADS.
+
+Détails Techniques :
+
+Requêtes : 250 | Tokens : 400 000 | Temps : 30 min.
+
+15. Ensembl
+Projet : "Le Navigateur de l'Évolution Génomique"
+
+Description : Compare un gène entre l'humain et l'animal (GBIF). Cherche pourquoi certaines espèces résistent aux maladies via PubMed et Reactome.
+
+Détails Techniques :
+
+Requêtes : 480 | Tokens : 220 000 | Temps : 15 min.
+
+16. STRING DB
+Projet : "Le Tueur de Hubs Pathogènes"
+
+Description : Identifie les protéines centrales d'un virus. Cherche comment les bloquer via ChEMBL et vérifie l'absence d'effet domino négatif sur l'humain via BioGRID.
+
+Détails Techniques :
+
+Requêtes : 300 | Tokens : 150 000 | Temps : 8 min.
+
+17. Reactome
+Projet : "Le Simulateur de Cascade Thérapeutique"
+
+Description : Modélise l'injection d'un produit. Suit son chemin dans toutes les voies biochimiques, vérifie les publications EuroPMC pour chaque étape.
+
+Détails Techniques :
+
+Requêtes : 360 | Tokens : 280 000 | Temps : 18 min.
+
+18. GBIF
+Projet : "Le Radar de Prédiction des Pandémies"
+
+Description : Relie la position des chauves-souris (GBIF) aux virus connus (NCBI) et aux infrastructures hospitalières (WHO).
+
+Détails Techniques :
+
+Requêtes : 700 | Tokens : 200 000 | Temps : 20 min.
+
+19. RxNorm
+Projet : "L'Encyclopédie des Médicaments Connectés"
+
+Description : Normalise un médicament. Trouve sa cible UniProt, son prix World Bank, ses brevets CrossRef et ses mentions Wikipedia.
+
+Détails Techniques :
+
+Requêtes : 200 | Tokens : 80 000 | Temps : 4 min.
+
+20. OpenFDA
+Projet : "Le Détecteur de Risques en Temps Réel"
+
+Description : Analyse les signalements d'effets secondaires. Cherche l'explication génétique sur ClinVar et structurelle sur PDB.
+
+Détails Techniques :
+
+Requêtes : 500 | Tokens : 300 000 | Temps : 15 min.
+
+21. ClinicalTrials
+Projet : "L'Optimiseur d'Essais Cliniques"
+
+Description : Lit un protocole d'essai. Suggère des biomarqueurs basés sur KEGG et vérifie si le modèle animal est pertinent via Ensembl.
+
+Détails Techniques :
+
+Requêtes : 330 | Tokens : 250 000 | Temps : 14 min.
+
+22. WHO GHO
+Projet : "Le Stratège de la Santé Mondiale"
+
+Description : Identifie une zone de forte mortalité. Demande aux 34 autres API de trouver le traitement le moins cher et le plus efficace pour cette zone.
+
+Détails Techniques :
+
+Requêtes : 400 | Tokens : 150 000 | Temps : 10 min.
+
+23. World Bank
+Projet : "L'Économiste de la Bio-Ingénierie"
+
+Description : Calcule si la synthèse d'une molécule PubChem est viable pour le PIB d'un pays en développement en fonction de ses maladies locales (WHO).
+
+Détails Techniques :
+
+Requêtes : 220 | Tokens : 100 000 | Temps : 6 min.
+
+24. KEGG
+Projet : "Le Cartographe de la Vie Cellulaire"
+
+Description : Dessine la carte métabolique. Pour chaque enzyme, cherche sa structure PDB et ses inhibiteurs ChEMBL.
+
+Détails Techniques :
+
+Requêtes : 380 | Tokens : 200 000 | Temps : 12 min.
+
+25. Wikipedia EN
+Projet : "Le Validateur de la Vulgarisation"
+
+Description : Lit un article Wikipedia. Vérifie chaque affirmation contre les données de NCBI/UniProt. Signale les erreurs via Wikidata.
+
+Détails Techniques :
+
+Requêtes : 900 | Tokens : 400 000 | Temps : 20 min.
+
+26. Wikipedia FR
+Projet : "Le Pont Scientifique Francophone"
+
+Description : Identifie les lacunes de la science en français. Traduit et enrichit via les sources de EuroPMC et PubMed.
+
+Détails Techniques :
+
+Requêtes : 400 | Tokens : 150 000 | Temps : 10 min.
+
+27. Zenodo
+Projet : "Le Gardien de la Reproductibilité"
+
+Description : Télécharge un script de recherche. Le teste contre les données de PDB/NCBI. Valide si l'algorithme est sur Papers with Code.
+
+Détails Techniques :
+
+Requêtes : 300 | Tokens : 300 000 | Temps : 20 min.
+
+28. NASA ADS
+Projet : "L'Explorateur d'Astro-Biologie"
+
+Description : Utilise la physique des étoiles pour comprendre la résistance des protéines aux UV extrêmes. Applique à la chimie PubChem.
+
+Détails Techniques :
+
+Requêtes : 250 | Tokens : 180 000 | Temps : 15 min.
+
+29. BioGRID
+Projet : "Le Vérificateur de Réalité Biologique"
+
+Description : Pour chaque interaction protéine-protéine, vérifie si elle est confirmée par le texte intégral de EuroPMC et la structure de PDB.
+
+Détails Techniques :
+
+Requêtes : 320 | Tokens : 120 000 | Temps : 8 min.
+
+30. PubChem
+Projet : "Le Créateur de Matière Thérapeutique"
+
+Description : À partir d'une structure chimique, prédit son activité sur toutes les cibles UniProt et ses risques sur OpenFDA.
+
+Détails Techniques :
+
+Requêtes : 500 | Tokens : 250 000 | Temps : 14 min.
+
+31. Wikidata
+Projet : "Le Cerveau Central du Graphe de Découverte"
+
+Description : Fait une requête SPARQL géante. Relie gène-maladie-molécule-pays. Si un lien manque, l'IA déclenche les 34 autres API pour le trouver.
+
+Détails Techniques :
+
+Requêtes : 1200 | Tokens : 100 000 | Temps : 5 min.
+
+32. Hugging Face
+Projet : "L'Orchestrateur de l'IA Scientifique"
+
+Description : Sélectionne le meilleur modèle pour analyser un dataset DataCite et valide les prédictions via ClinicalTrials.
+
+Détails Techniques :
+
+Requêtes : 200 | Tokens : 600 000 (Calcul d'inférence) | Temps : 40 min.
+
+33. INSPIRE-HEP
+Projet : "Le Logicien de la Stabilité Moléculaire"
+
+Description : Utilise la thermodynamique des hautes énergies pour prédire la rupture des liaisons hydrogène dans les protéines PDB.
+
+Détails Techniques :
+
+Requêtes : 150 | Tokens : 150 000 | Temps : 12 min.
+
+34. Papers with Code
+Projet : "Le Benchmark de la Découverte"
+
+Description : Compare les performances des derniers modèles IA sur les données de ChEMBL. Publie le gagnant sur Zenodo.
+
+Détails Techniques :
+
+Requêtes : 300 | Tokens : 200 000 | Temps : 15 min.
+
+35. Semantic Scholar
+Projet : "Le Filtre Anti-Biais de la Science"
+
+Description : Analyse si un chercheur est trop financé par une source (via World Bank) et si ses résultats sont confirmés par les données brutes des 34 autres API.
+
+Détails Techniques :
+
+Requêtes : 550 | Tokens : 280 000 | Temps : 18 min.
+
+Synthèse du Système "3 Milliards de Tokens / Mois"
+Ce système fonctionne par Agents de Réflexion :
+
+Entrée : Une donnée d'une des 35 API.
+
+Expansion : L'IA génère 34 sous-requêtes obligatoires.
+
+Débat (Consommation de Tokens) : Plusieurs agents IA (Un chimiste, un biologiste, un économiste, un physicien) analysent les 35 flux de données simultanément. Ils discutent entre eux pour résoudre les contradictions (ex: "PubMed dit que ça marche, mais OpenFDA montre des morts").
+
+Résultat : Une synthèse de haute précision, sans stockage local, tout en flux dynamique.
