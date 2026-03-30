@@ -63,8 +63,10 @@ Le script génère un tableau de bord HTML contenant :
 - **Stabilité** : Les endpoints publics peuvent changer sans préavis. Ce tool sert à *monitorer* ces changements.
 - **Usage** : Éducatif et recherche. Non conçu pour un usage production critique.
 
-- 🔬 Test de Cas Réel : "Projet Antiviral Universel"
-- 
+========
+
+🔬 Test de Cas Réel : "Projet Antiviral Universel"
+
 Voici comment le système utilise obligatoirement tous les sites pour un seul projet :
 
 Aspiration (NCBI/Nucleotide) : L'IA détecte une nouvelle séquence de virus émergent via GBIF (zones de biodiversité à risque).
@@ -94,6 +96,7 @@ Tokens de Code : Pour générer les scripts de calcul (BioPython, R) qui traiten
 
 Conclusion : En forçant chaque site à être un paramètre d'une seule équation, nous créons une IA Spécialiste qui ne se contente pas de répondre à des questions, mais qui génère de la science de manière industrielle. C'est le passage de la recherche artisanale à l'usine à découvertes.
 
+========
 
 ## 📄 Licence
 
