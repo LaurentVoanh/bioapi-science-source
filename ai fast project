@@ -1,837 +1,637 @@
-# Catalogue Détaillé des 35 Projets BioAPI
+# Catalogue Fonctionnel des 35 Projets BioAPI
+
+---
 
 ## 1. PubMed (NCBI)
 **Projet :** Le Synthétiseur Bibliographique Universel  
-**Description :** Validation totale d'un article publié via les 34 autres API.  
-**Workflow :**
-1. **Extraction Moléculaire** (ChEMBL, PubChem, RxNorm) : Identifie structures chimiques et médicaments cités. (`3min | 50 Req | 40k Tok`)
-2. **Validation Structurelle** (PDB, UniProt, NCBI Protein, Ensembl) : Vérifie coordonnées 3D et séquences protéiques mentionnées. (`4min | 80 Req | 60k Tok`)
-3. **Contexte Clinique** (ClinVar, ClinicalTrials, OpenFDA, BioGRID) : Confirme variants génétiques, essais en cours et interactions protéines. (`3min | 60 Req | 50k Tok`)
-4. **Métabolisme & Voies** (Reactome, KEGG, STRING) : Cartographie les voies biochimiques impactées. (`2min | 40 Req | 30k Tok`)
-5. **Intégrité & Impact** (CrossRef, OpenAlex, Semantic Scholar, DataCite, Zenodo, Papers with Code) : Vérifie citations, DOI, datasets et code. (`2min | 100 Req | 40k Tok`)
-6. **Contexte Global** (WHO GHO, World Bank, GBIF, NASA ADS, INSPIRE-HEP) : Évalue impact sanitaire, éco, écologique et physique. (`1min | 70 Req | 20k Tok`)
-7. **Accessibilité** (Unpaywall, Wikipedia EN/FR, Wikidata, Hugging Face, EuroPMC, NCBI Gene/Nucleotide, ArXiv) : Vérifie accès ouvert, vulgarisation et modèles IA. (`0min | 50 Req | 10k Tok`)  
-**Détails Techniques :** `15 min` | `450 Req` | `250k Tok` | `50 Mo` | `XML/E-Utilities` | `Agent lecture critique + Vérification faits`
+**API Principale :** PubMed indexe et fournit l'accès à des millions d'articles biomédicaux. Elle permet la recherche bibliographique par mots-clés, auteurs, DOI, et l'extraction de métadonnées structurées (titres, résumés, affiliations, références).
+
+**Workflow détaillé :**
+1. **Extraction Moléculaire** : ChEMBL identifie les composés bioactifs cités ; PubChem fournit les structures chimiques normalisées ; RxNorm mappe les médicaments mentionnés vers leurs identifiants cliniques.
+2. **Validation Structurelle** : PDB vérifie la disponibilité des coordonnées 3D des protéines citées ; UniProt confirme les identifiants et fonctions protéiques ; NCBI Protein valide les séquences ; Ensembl assure la cohérence avec les annotations génomiques.
+3. **Contexte Clinique** : ClinVar croise les variants génétiques mentionnés avec leurs interprétations cliniques ; ClinicalTrials vérifie l'existence d'essais liés ; OpenFDA signale les alertes de sécurité ; BioGRID confirme les interactions protéiques expérimentales.
+4. **Métabolisme & Voies** : Reactome cartographie les voies biochimiques impliquées ; KEGG fournit les cartes métaboliques de référence ; STRING évalue les réseaux d'interaction fonctionnelle.
+5. **Intégrité & Impact** : CrossRef valide les DOI et le statut de publication ; OpenAlex analyse les réseaux de citations ; Semantic Scholar détecte les similarités sémantiques ; DataCite/Zenodo/Papers with Code vérifient la disponibilité des datasets et codes sources.
+6. **Contexte Global** : WHO GHO évalue la pertinence sanitaire mondiale ; World Bank contextualise l'impact économique ; GBIF géolocalise les données écologiques ; NASA ADS/INSPIRE-HEP identifient les croisements avec la physique fondamentale.
+7. **Accessibilité** : Unpaywall signale les versions en accès ouvert ; Wikipedia (EN/FR) et Wikidata fournissent un contexte vulgarisé ; Hugging Face identifie les modèles IA associés ; EuroPMC/ArXiv proposent des préprints ou versions alternatives.
+
+---
 
 ## 2. ClinVar (NCBI)
 **Projet :** Le Bouclier de Précision Génomique  
-**Description :** Modélisation conséquence physique d'un variant via 34 autres API.  
-**Workflow :**
-1. **Positionnement** (Ensembl, NCBI Gene, NCBI Nucleotide) : Localise variant sur génome et transcrits. (`2min | 40 Req | 30k Tok`)
-2. **Impact Protéique** (UniProt, NCBI Protein, PDB, INSPIRE-HEP) : Modélise changement structure 3D et stabilité thermodynamique. (`3min | 60 Req | 50k Tok`)
-3. **Correction Chimique** (ChEMBL, PubChem, RxNorm) : Identifie molécules correctrices potentielles. (`2min | 50 Req | 40k Tok`)
-4. **Sécurité Clinique** (OpenFDA, ClinicalTrials, BioGRID) : Vérifie toxicité et interactions connues. (`1min | 40 Req | 30k Tok`)
-5. **Littérature** (PubMed, EuroPMC, Semantic Scholar, ArXiv) : Recherche validations expérimentales. (`1min | 50 Req | 30k Tok`)
-6. **Économie & Santé** (World Bank, WHO GHO, GBIF) : Évalue coût traitement et prévalence écologique. (`0.5min | 30 Req | 20k Tok`)
-7. **Traçabilité** (CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Wikidata, Wikipedia, Unpaywall, Hugging Face, Reactome, KEGG, STRING, NASA ADS) : Vérifie intégrité académique et accessibilité. (`0.5min | 110 Req | 30k Tok`)  
-**Détails Techniques :** `10 min` | `380 Req` | `180k Tok` | `10 Mo` | `HTTPS/REST` | `Agent génétique + Simulation structurale`
+**API Principale :** ClinVar archive les relations entre variants génétiques et phénotypes cliniques, avec interprétations expertes (bénin, pathogène, etc.) et niveaux de preuve.
+
+**Workflow détaillé :**
+1. **Positionnement** : Ensembl localise le variant sur les transcrits de référence ; NCBI Gene identifie le gène hôte et ses fonctions ; NCBI Nucleotide fournit la séquence nucléotidique exacte.
+2. **Impact Protéique** : UniProt décrit l'effet sur la protéine (domaines, fonctions) ; NCBI Protein fournit la séquence protéique altérée ; PDB modélise l'impact structural 3D ; INSPIRE-HEP apporte des méthodes de calcul thermodynamique.
+3. **Correction Chimique** : ChEMBL recherche des molécules capables de moduler l'effet du variant ; PubChem fournit les structures candidates ; RxNorm identifie les médicaments approuvés pertinents.
+4. **Sécurité Clinique** : OpenFDA signale les effets indésirables connus ; ClinicalTrials identifie les études en cours sur des thérapies ciblées ; BioGRID vérifie les interactions pouvant être perturbées.
+5. **Littérature** : PubMed/EuroPMC/Semantic Scholar agrègent les publications validant expérimentalement l'interprétation du variant ; ArXiv propose des préprints méthodologiques.
+6. **Économie & Santé** : World Bank/WHO GHO/GBIF évaluent la prévalence du variant, le coût des traitements et la distribution géographique.
+7. **Traçabilité** : CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code assurent la traçabilité académique ; Wikidata/Wikipedia/Unpaywall facilitent l'accès grand public ; Reactome/KEGG/STRING/NASA ADS contextualisent biologiquement et physiquement.
+
+---
 
 ## 3. NCBI Gene
 **Projet :** L'Architecte de l'Ontologie Génique  
-**Description :** Création jumeau numérique d'un gène via 34 autres API.  
-**Workflow :**
-1. **Annotation** (UniProt, NCBI Protein, Ensembl) : Traduit gène en protéine et isoformes. (`2min | 40 Req | 30k Tok`)
-2. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Intègre voies et réseaux d'interaction. (`2min | 50 Req | 40k Tok`)
-3. **Prédiction** (Hugging Face, Papers with Code) : Prédit expression future via modèles IA. (`2min | 30 Req | 50k Tok`)
-4. **Clinique** (ClinVar, ClinicalTrials, OpenFDA, RxNorm) : Lie aux pathologies et traitements. (`1min | 40 Req | 30k Tok`)
-5. **Chimie** (ChEMBL, PubChem, PDB, INSPIRE-HEP) : Associe structures ligands et stabilité. (`1min | 40 Req | 30k Tok`)
-6. **Impact** (WHO GHO, World Bank, GBIF, NASA ADS) : Évalue santé, éco, écologie et physique. (`0.5min | 30 Req | 20k Tok`)
-7. **Diffusion** (PubMed, EuroPMC, CrossRef, OpenAlex, Semantic Scholar, DataCite, Zenodo, Wikidata, Wikipedia, Unpaywall, ArXiv, NCBI Nucleotide) : Assure traçabilité et accès. (`0.5min | 80 Req | 30k Tok`)  
-**Détails Techniques :** `8 min` | `310 Req` | `150k Tok` | `5 Mo` | `E-Utilities` | `Agent intégration + Prédiction fonctionnelle`
+**API Principale :** NCBI Gene fournit des fiches géniques consolidées : localisation, fonctions, orthologues, phénotypes associés, et liens vers d'autres bases.
+
+**Workflow détaillé :**
+1. **Annotation** : UniProt enrichit avec les fonctions protéiques et modifications post-traductionnelles ; NCBI Protein fournit les séquences traduites ; Ensembl aligne les annotations sur les génomes de référence.
+2. **Métabolisme** : Reactome/KEGG cartographient les voies où le gène intervient ; STRING/BioGRID listent les partenaires d'interaction physique ou fonctionnelle.
+3. **Prédiction** : Hugging Face applique des modèles de langage pour prédire des fonctions non annotées ; Papers with Code compare les performances des algorithmes de prédiction génique.
+4. **Clinique** : ClinVar lie le gène aux variants pathogènes ; ClinicalTrials/OpenFDA/RxNorm connectent aux traitements et essais thérapeutiques ciblant ce gène.
+5. **Chimie** : ChEMBL/PubChem/PDB/INSPIRE-HEP associent des ligands, structures 3D et méthodes de calcul pour évaluer la "druggabilité" du gène.
+6. **Impact** : WHO GHO/World Bank/GBIF/NASA ADS évaluent l'importance sanitaire, économique, écologique ou physique des recherches sur ce gène.
+7. **Diffusion** : PubMed/EuroPMC/CrossRef/OpenAlex/Semantic Scholar assurent la visibilité bibliographique ; DataCite/Zenodo/Wikidata/Wikipedia/Unpaywall/ArXiv/NCBI Nucleotide garantissent l'accès aux données brutes et leur vulgarisation.
+
+---
 
 ## 4. NCBI Nucleotide
 **Projet :** La Sentinelle de Surveillance Virale  
-**Description :** Analyse séquence ADN brute via 34 autres API.  
-**Workflow :**
-1. **Similarité** (NCBI Protein, UniProt, Ensembl) : Trouve protéines homologues. (`4min | 80 Req | 60k Tok`)
-2. **Structure** (PDB, Hugging Face, INSPIRE-HEP) : Prédit repliement et stabilité physique. (`5min | 70 Req | 80k Tok`)
-3. **Vaccins** (PubMed, EuroPMC, ClinicalTrials) : Recherche candidats vaccinaux. (`3min | 60 Req | 50k Tok`)
-4. **Propagation** (GBIF, WHO GHO, World Bank) : Modélise risque épidémique et coût. (`3min | 50 Req | 40k Tok`)
-5. **Chimie** (ChEMBL, PubChem, RxNorm, OpenFDA) : Identifie antiviraux et sécurité. (`2min | 40 Req | 30k Tok`)
-6. **Réseaux** (Reactome, KEGG, STRING, BioGRID) : Analyse interactions hôtes. (`2min | 40 Req | 30k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, Semantic Scholar, DataCite, Zenodo, Papers with Code, Wikidata, Wikipedia, Unpaywall, ArXiv, NASA ADS, NCBI Gene, ClinVar) : Valide source et contexte. (`1min | 210 Req | 110k Tok`)  
-**Détails Techniques :** `20 min` | `550 Req` | `400k Tok` | `100 Mo` | `REST/XML` | `DNABERT + Agent épidémiologique`
+**API Principale :** NCBI Nucleotide archive les séquences d'ADN/ARN brutes ou annotées, avec métadonnées (organisme, méthode de séquençage, publication associée).
+
+**Workflow détaillé :**
+1. **Similarité** : NCBI Protein/UniProt/Ensembl identifient les protéines codées par la séquence et leurs homologues dans d'autres espèces.
+2. **Structure** : PDB recherche des structures 3D connues pour les protéines issues de la séquence ; Hugging Face applique des modèles de prédiction de repliement (ex: AlphaFold) ; INSPIRE-HEP fournit des méthodes de modélisation physique.
+3. **Vaccins** : PubMed/EuroPMC/ClinicalTrials recherchent les publications et essais liés à des candidats vaccinaux ciblant cette séquence.
+4. **Propagation** : GBIF géolocalise les prélèvements ; WHO GHO/World Bank évaluent le risque épidémique et les ressources sanitaires disponibles.
+5. **Chimie** : ChEMBL/PubChem/RxNorm/OpenFDA identifient les molécules antivirales connues et leur profil de sécurité.
+6. **Réseaux** : Reactome/KEGG/STRING/BioGRID analysent comment la protéine issue de la séquence interagit avec les voies de l'hôte.
+7. **Intégrité** : CrossRef/OpenAlex/Semantic Scholar/DataCite/Zenodo/Papers with Code/Wikidata/Wikipedia/Unpaywall/ArXiv/NASA ADS/NCBI Gene/ClinVar valident la source, le contexte académique et les liens cliniques.
+
+---
 
 ## 5. NCBI Protein
 **Projet :** L'Ingénieur de Design Enzymatique  
-**Description :** Analyse survie protéine via 34 autres API.  
-**Workflow :**
-1. **Interacteurs** (BioGRID, STRING, Reactome) : Cartographie partenaires biologiques. (`2min | 50 Req | 40k Tok`)
-2. **Ligands** (ChEMBL, PDB, PubChem) : Identifie poches de liaison. (`3min | 60 Req | 50k Tok`)
-3. **Littérature** (PubMed, Semantic Scholar, EuroPMC) : Vérifie fonctions connues. (`2min | 50 Req | 40k Tok`)
-4. **Optimisation** (Papers with Code, Hugging Face, ArXiv) : Améliore fonction via IA. (`2min | 40 Req | 50k Tok`)
-5. **Brevets & Coût** (CrossRef, World Bank) : Vérifie IP et viabilité. (`1min | 30 Req | 20k Tok`)
-6. **Clinique** (ClinVar, ClinicalTrials, OpenFDA, RxNorm) : Évalue potentiel thérapeutique. (`1min | 40 Req | 30k Tok`)
-7. **Contexte** (NCBI Gene, Ensembl, UniProt, KEGG, WHO GHO, GBIF, NASA ADS, INSPIRE-HEP, DataCite, Zenodo, Wikidata, Wikipedia, Unpaywall, OpenAlex, NCBI Nucleotide) : Valide génome, éco, physique et accès. (`1min | 130 Req | 70k Tok`)  
-**Détails Techniques :** `12 min` | `400 Req` | `200k Tok` | `20 Mo` | `E-Utilities` | `Agent biophysique + Stratégie industrielle`
+**API Principale :** NCBI Protein archive les séquences protéiques déduites des génomes, avec annotations fonctionnelles, domaines, et liens vers structures 3D.
+
+**Workflow détaillé :**
+1. **Interacteurs** : BioGRID/STRING/Reactome listent les partenaires d'interaction physique, fonctionnelle ou métabolique de la protéine.
+2. **Ligands** : ChEMBL identifie les molécules bioactives liées à la protéine ; PDB fournit les structures de complexes protéine-ligand ; PubChem normalise les structures chimiques.
+3. **Littérature** : PubMed/Semantic Scholar/EuroPMC agrègent les publications décrivant la fonction, la régulation ou l'ingénierie de la protéine.
+4. **Optimisation** : Papers with Code/Hugging Face/ArXiv comparent et appliquent des modèles d'IA pour prédire des mutations améliorant la stabilité ou l'activité.
+5. **Brevets & Coût** : CrossRef vérifie les publications liées à la propriété intellectuelle ; World Bank évalue la viabilité économique d'une production industrielle.
+6. **Clinique** : ClinVar/ClinicalTrials/OpenFDA/RxNorm évaluent le potentiel thérapeutique et les risques associés à la modulation de cette protéine.
+7. **Contexte** : NCBI Gene/Ensembl/UniProt/KEGG/WHO GHO/GBIF/NASA ADS/INSPIRE-HEP/DataCite/Zenodo/Wikidata/Wikipedia/Unpaywall/OpenAlex/NCBI Nucleotide contextualisent génomiquement, écologiquement, physiquement et académiquement.
+
+---
 
 ## 6. UniProt
 **Projet :** L'Annotateur Automatique Suprême  
-**Description :** Transformation protéine en entité comprise via 34 autres API.  
-**Workflow :**
-1. **Contexte** (Wikipedia EN/FR, Wikidata) : Définit connaissance commune. (`1min | 40 Req | 30k Tok`)
-2. **Faits** (EuroPMC, PubMed, Semantic Scholar) : Extrait preuves scientifiques. (`2min | 60 Req | 50k Tok`)
-3. **Structure** (PDB, INSPIRE-HEP, NCBI Protein) : Valide coordonnées 3D. (`2min | 50 Req | 40k Tok`)
-4. **Gènes** (Ensembl, NCBI Gene, ClinVar) : Aligne variants et position. (`1min | 40 Req | 30k Tok`)
-5. **Chimie** (RxNorm, PubChem, ChEMBL) : Vérifie interactions médicamenteuses. (`1min | 40 Req | 30k Tok`)
-6. **Réseaux** (STRING, BioGRID, Reactome, KEGG) : Intègre voies métaboliques. (`1min | 50 Req | 30k Tok`)
-7. **Global** (ClinicalTrials, OpenFDA, WHO GHO, World Bank, GBIF, CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, NASA ADS, Unpaywall, NCBI Nucleotide) : Valide clinique, éco, physique et accès. (`0min | 70 Req | 40k Tok`)  
-**Détails Techniques :** `7 min` | `350 Req` | `220k Tok` | `15 Mo` | `HTTPS/REST` | `Agent annotation sémantique + Validation croisée`
+**API Principale :** UniProt fournit des annotations protéiques de haute qualité : fonctions, domaines, modifications post-traductionnelles, localisation subcellulaire, et variants.
+
+**Workflow détaillé :**
+1. **Contexte** : Wikipedia (EN/FR) et Wikidata fournissent une synthèse vulgarisée et structurée des connaissances générales sur la protéine.
+2. **Faits** : EuroPMC/PubHub/Semantic Scholar extraient les preuves expérimentales issues de la littérature scientifique.
+3. **Structure** : PDB valide les coordonnées 3D disponibles ; INSPIRE-HEP apporte des méthodes de calcul biophysique ; NCBI Protein confirme la séquence de référence.
+4. **Gènes** : Ensembl/NCBI Gene/ClinVar alignent les annotations protéiques avec les variants génomiques et leurs interprétations cliniques.
+5. **Chimie** : RxNorm/PubChem/ChEMBL vérifient les interactions médicamenteuses connues et les composés modulant l'activité protéique.
+6. **Réseaux** : STRING/BioGRID/Reactome/KEGG intègrent la protéine dans ses voies métaboliques et réseaux d'interaction.
+7. **Global** : ClinicalTrials/OpenFDA/WHO GHO/World Bank/GBIF/CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/NASA ADS/Unpaywall/NCBI Nucleotide valident le contexte clinique, économique, écologique, académique et l'accessibilité des données.
+
+---
 
 ## 7. EuroPMC
 **Projet :** L'Extracteur de Vérité en Texte Intégral  
-**Description :** Extraction signaux faibles Full-Text via 34 autres API.  
-**Workflow :**
-1. **Entités** (NCBI Gene, UniProt, PubMed) : Identifie gènes et protéines. (`5min | 80 Req | 100k Tok`)
-2. **Plantes & Eco** (GBIF, WHO GHO, World Bank) : Géolocalise et évalue impact. (`5min | 70 Req | 80k Tok`)
-3. **Chimie** (PubChem, ChEMBL, RxNorm) : Analyse composés mentionnés. (`5min | 60 Req | 80k Tok`)
-4. **Clinique** (ClinicalTrials, OpenFDA, ClinVar) : Vérifie effets humains. (`5min | 60 Req | 80k Tok`)
-5. **Maths** (ArXiv, INSPIRE-HEP, NASA ADS) : Valide rigueur théorique. (`3min | 50 Req | 60k Tok`)
-6. **Structure** (PDB, NCBI Protein, Ensembl) : Confirme structures citées. (`2min | 50 Req | 50k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, Semantic Scholar, DataCite, Zenodo, Papers with Code, Wikidata, Wikipedia, Unpaywall, Hugging Face, Reactome, KEGG, STRING, BioGRID, NCBI Nucleotide) : Valide source et reproductibilité. (`0min | 130 Req | 50k Tok`)  
-**Détails Techniques :** `25 min` | `500 Req` | `500k Tok` | `80 Mo` | `REST/JSON` | `Agent NLP scientifique + Signaux faibles`
+**API Principale :** EuroPMC fournit l'accès au texte intégral d'articles biomédicaux en open access, avec extraction sémantique d'entités (gènes, protéines, maladies, composés).
 
+**Workflow détaillé :**
+1. **Entités** : NCBI Gene/UniProt/PubMed identifient et normalisent les gènes, protéines et concepts biomédicaux mentionnés dans le texte.
+2. **Plantes & Eco** : GBIF géolocalise les échantillons biologiques cités ; WHO GHO/World Bank évaluent l'impact sanitaire et économique des recherches décrites.
+3. **Chimie** : PubChem/ChEMBL/RxNorm analysent les composés chimiques mentionnés, leurs structures et leurs usages thérapeutiques.
+4. **Clinique** : ClinicalTrials/OpenFDA/ClinVar vérifient la pertinence clinique des résultats rapportés et leur conformité réglementaire.
+5. **Maths** : ArXiv/INSPIRE-HEP/NASA ADS valident la rigueur méthodologique et les modèles mathématiques ou physiques employés.
+6. **Structure** : PDB/NCBI Protein/Ensembl confirment les structures moléculaires citées dans l'article.
+7. **Intégrité** : CrossRef/OpenAlex/Semantic Scholar/DataCite/Zenodo/Papers with Code/Wikidata/Wikipedia/Unpaywall/Hugging Face/Reactome/KEGG/STRING/BioGRID/NCBI Nucleotide assurent la traçabilité académique, la reproductibilité et l'accès aux données sous-jacentes.
+
+---
 ## 8. OpenAlex
 **Projet :** Le Cartographe de la Convergence  
-**Description :** Prédiction révolution scientifique via 34 autres API.  
-**Workflow :**
-1. **Flux Citations** (CrossRef, DataCite, Semantic Scholar) : Analyse tendances. (`3min | 80 Req | 60k Tok`)
-2. **Convergence Phys/Bio** (INSPIRE-HEP, PubMed, NCBI Gene) : Détecte intersections. (`3min | 70 Req | 60k Tok`)
-3. **Implémentation** (Papers with Code, Hugging Face, Zenodo) : Vérifie code disponible. (`3min | 60 Req | 60k Tok`)
-4. **Entités** (UniProt, ChEMBL, PDB, ClinVar) : Lie concepts à données. (`2min | 50 Req | 40k Tok`)
-5. **Clinique** (ClinicalTrials, OpenFDA, RxNorm) : Évalue transférabilité. (`2min | 50 Req | 40k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Modélise impacts biologiques. (`1min | 40 Req | 30k Tok`)
-7. **Global** (GBIF, WHO GHO, World Bank, ArXiv, Unpaywall, Wikipedia, Wikidata, NCBI Protein/Nucleotide, Ensembl, PubChem, NASA ADS, EuroPMC) : Intègre éco, accès et données. (`1min | 250 Req | 110k Tok`)  
-**Détails Techniques :** `15 min` | `600 Req` | `300k Tok` | `30 Mo` | `REST/JSON` | `Agent bibliométrie + Convergence`
+**API Principale :** OpenAlex indexe les travaux scientifiques mondiaux, auteurs, institutions et concepts, permettant d'analyser les tendances de recherche et les réseaux de citations à grande échelle.
+
+**Workflow détaillé :**
+1. **Flux Citations** : CrossRef valide les DOI et les liens de citation ; DataCite assure l'identification unique des datasets cités ; Semantic Scholar analyse la pertinence sémantique des références.
+2. **Convergence Phys/Bio** : INSPIRE-HEP identifie les publications en physique des hautes énergies pertinentes ; PubMed croise les concepts biomédicaux ; NCBI Gene lie les gènes aux tendances de publication.
+3. **Implémentation** : Papers with Code vérifie la disponibilité des implémentations logicielles ; Hugging Face identifie les modèles IA associés ; Zenodo archive les versions stables du code.
+4. **Entités** : UniProt valide les protéines étudiées ; ChEMBL lie les composés chimiques aux publications ; PDB associe les structures 3D ; ClinVar connecte les variants cliniques.
+5. **Clinique** : ClinicalTrials vérifie les essais en cours liés aux concepts ; OpenFDA signale les applications réglementaires ; RxNorm normalise les médicaments mentionnés.
+6. **Métabolisme** : Reactome/KEGG/STRING/BioGRID modélisent les impacts biologiques des concepts étudiés dans les publications.
+7. **Global** : GBIF/WHO GHO/World Bank intègrent les données écologiques et sanitaires ; ArXiv/Unpaywall/Wikipedia/Wikidata assurent l'accès ouvert ; NCBI Protein/Nucleotide/Ensembl/PubChem/NASA ADS/EuroPMC contextualisent les données brutes.
+
+**Détails Techniques :**
+Temps : 15 minutes. | Requêtes : 600. | Tokens : 300 000. | Stockage : 30 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent bibliométrie + Agent convergence.
+
+---
 
 ## 9. ChEMBL
 **Projet :** Le Laboratoire de Pharmacologie Virtuelle  
-**Description :** Simulation passage molécule dans corps via 34 autres API.  
-**Workflow :**
-1. **Métabolisme** (KEGG, UniProt, Reactome) : Vérifie enzymes métaboliques. (`3min | 60 Req | 50k Tok`)
-2. **Toxicité** (OpenFDA, ClinicalTrials, ClinVar) : Évalue risques cliniques. (`3min | 60 Req | 50k Tok`)
-3. **Disponibilité** (WHO GHO, World Bank, GBIF) : Analyse accès mondial. (`2min | 50 Req | 40k Tok`)
-4. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Confirme études. (`2min | 50 Req | 40k Tok`)
-5. **Standardisation** (PubChem, RxNorm, PDB) : Valide structure chimique. (`1min | 40 Req | 30k Tok`)
-6. **Génome** (NCBI Gene, Ensembl, NCBI Nucleotide) : Lie aux cibles génétiques. (`1min | 40 Req | 30k Tok`)
-7. **Réseaux & Intégrité** (STRING, BioGRID, CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, Wikidata, Wikipedia, Unpaywall, NCBI Protein) : Valide interactions et source. (`0min | 120 Req | 60k Tok`)  
-**Détails Techniques :** `12 min` | `420 Req` | `250k Tok` | `25 Mo` | `REST/JSON` | `Agent pharmacocinétique + Toxicologique`
+**API Principale :** ChEMBL stocke les données de liaison, d'activité et de propriétés ADMET de molécules bioactives, servant de référence pour la découverte de médicaments.
+
+**Workflow détaillé :**
+1. **Métabolisme** : KEGG cartographie les voies métaboliques cibles ; UniProt identifie les enzymes impliquées ; Reactome détaille les étapes biochimiques de transformation.
+2. **Toxicité** : OpenFDA signale les effets indésirables rapportés ; ClinicalTrials vérifie les arrêts d'essais pour toxicité ; ClinVar identifie les sensibilités génétiques.
+3. **Disponibilité** : WHO GHO évalue l'accès aux traitements dans les zones critiques ; World Bank analyse les coûts de production ; GBIF vérifie l'origine des matières premières.
+4. **Littérature** : PubMed/EuroPMC/Semantic Scholar agrègent les études précliniques et cliniques validant l'activité.
+5. **Standardisation** : PubChem normalise les structures chimiques ; RxNorm mappe les ingrédients actifs aux médicaments approuvés ; PDB valide les structures 3D des cibles.
+6. **Génome** : NCBI Gene/Ensembl/NCBI Nucleotide lient les cibles moléculaires à leur contexte génomique.
+7. **Réseaux & Intégrité** : STRING/BioGRID valident les interactions ; CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code assurent la traçabilité ; Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS contextualisent les méthodes ; Wikidata/Wikipedia/Unpaywall/NCBI Protein facilitent l'accès.
+
+**Détails Techniques :**
+Temps : 12 minutes. | Requêtes : 420. | Tokens : 250 000. | Stockage : 25 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent pharmacocinétique + Agent toxicologique.
+
+---
 
 ## 10. ArXiv
 **Projet :** Le Traducteur de Mathématiques en Médicaments  
-**Description :** Application algorithme aux données bio via 34 autres API.  
-**Workflow :**
-1. **Application** (PDB, ClinVar, NCBI Gene) : Teste sur structures et variants. (`2min | 50 Req | 40k Tok`)
-2. **Modèles** (Hugging Face, Papers with Code) : Compare performances. (`2min | 40 Req | 40k Tok`)
-3. **Publication** (Zenodo, DataCite, CrossRef) : Archive résultats. (`1min | 30 Req | 20k Tok`)
-4. **Pertinence** (PubMed, EuroPMC, Semantic Scholar) : Valide contexte biomédical. (`2min | 50 Req | 40k Tok`)
-5. **Biologie** (UniProt, Ensembl, NCBI Protein/Nucleotide) : Vérifie données d'entrée. (`2min | 50 Req | 40k Tok`)
-6. **Chimie** (ChEMBL, PubChem, RxNorm) : Traduit en candidats médicaments. (`1min | 40 Req | 30k Tok`)
-7. **Clinique & Global** (ClinicalTrials, OpenFDA, Reactome, KEGG, STRING, BioGRID, WHO GHO, World Bank, GBIF, INSPIRE-HEP, NASA ADS, OpenAlex, Wikidata, Wikipedia, Unpaywall, ClinVar) : Évalue impact et intégrité. (`0min | 120 Req | 70k Tok`)  
-**Détails Techniques :** `10 min` | `280 Req` | `180k Tok` | `12 Mo` | `REST/JSON` | `Agent transfer learning + Validation applicative`
+**API Principale :** ArXiv diffuse des préprints en physique, mathématiques et informatique, permettant d'identifier des algorithmes applicables à la biologie avant publication formelle.
+
+**Workflow détaillé :**
+1. **Application** : PDB teste les algorithmes sur des structures connues ; ClinVar vérifie l'impact sur les variants ; NCBI Gene valide les cibles génétiques.
+2. **Modèles** : Hugging Face compare les architectures de modèles ; Papers with Code évalue les performances sur benchmarks biologiques.
+3. **Publication** : Zenodo/DataCite/CrossRef archivent et identifient les résultats dérivés des préprints.
+4. **Pertinence** : PubMed/EuroPMC/Semantic Scholar valident le contexte biomédical des méthodes proposées.
+5. **Biologie** : UniProt/Ensembl/NCBI Protein/Nucleotide vérifient la qualité des données d'entrée biologiques utilisées dans les algorithmes.
+6. **Chimie** : ChEMBL/PubChem/RxNorm traduisent les sorties algorithmiques en candidats médicaments structurés.
+7. **Clinique & Global** : ClinicalTrials/OpenFDA/Reactome/KEGG/STRING/BioGRID évaluent l'impact thérapeutique ; WHO GHO/World Bank/GBIF/INSPIRE-HEP/NASA ADS/OpenAlex/Wikidata/Wikipedia/Unpaywall/ClinVar contextualisent l'application.
+
+**Détails Techniques :**
+Temps : 10 minutes. | Requêtes : 280. | Tokens : 180 000. | Stockage : 12 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent transfert learning + Agent validation applicative.
+
+---
 
 ## 11. CrossRef
 **Projet :** Le Validateur de l'Intégrité Scientifique  
-**Description :** Vérification DOI et rétraction via 34 autres API.  
-**Workflow :**
-1. **Rétraction** (Wikidata, PubMed, Semantic Scholar) : Détecte articles rétractés. (`1min | 100 Req | 20k Tok`)
-2. **Données** (DataCite, Zenodo, Papers with Code) : Vérifie datasets et code. (`1min | 100 Req | 20k Tok`)
-3. **Bibliographie** (OpenAlex, EuroPMC, ArXiv) : Analyse citations. (`1min | 100 Req | 20k Tok`)
-4. **Résultats** (NCBI Gene, UniProt, PDB, ChEMBL) : Valide reproductibilité expérimentale. (`1min | 100 Req | 20k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA, RxNorm) : Vérifie conformité clinique. (`0.5min | 100 Req | 10k Tok`)
-6. **Biologie** (Reactome, KEGG, STRING, BioGRID) : Valide réseaux biologiques. (`0.5min | 100 Req | 10k Tok`)
-7. **Global** (GBIF, WHO GHO, World Bank, INSPIRE-HEP, NASA ADS, Hugging Face, Unpaywall, Wikipedia, NCBI Protein/Nucleotide, Ensembl, PubChem, Wikidata) : Évalue pertinence et accès. (`0min | 200 Req | 20k Tok`)  
-**Détails Techniques :** `5 min` | `800 Req` | `100k Tok` | `8 Mo` | `REST/JSON` | `Agent détection fraude + Reproductibilité`
+**API Principale :** CrossRef gère les DOI et les métadonnées de publication, permettant de vérifier le statut, les citations et les rétractions des articles scientifiques.
+
+**Workflow détaillé :**
+1. **Rétraction** : Wikidata signale les articles rétractés ; PubMed/Semantic Scholar mettent à jour le statut des publications liées.
+2. **Données** : DataCite/Zenodo/Papers with Code vérifient la disponibilité des datasets et codes associés aux DOI.
+3. **Bibliographie** : OpenAlex/EuroPMC/ArXiv analysent les réseaux de citations pour détecter les anomalies.
+4. **Résultats** : NCBI Gene/UniProt/PDB/ChEMBL valident la reproductibilité des données expérimentales citées.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA/RxNorm vérifient la conformité des affirmations cliniques avec les registres.
+6. **Biologie** : Reactome/KEGG/STRING/BioGRID valident la cohérence des réseaux biologiques décrits.
+7. **Global** : GBIF/WHO GHO/World Bank/INSPIRE-HEP/NASA ADS/Hugging Face/Unpaywall/Wikipedia/NCBI Protein/Nucleotide/Ensembl/PubChem/Wikidata évaluent la pertinence et l'accès ouvert.
+
+**Détails Techniques :**
+Temps : 5 minutes. | Requêtes : 800. | Tokens : 100 000. | Stockage : 8 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent détection fraude + Agent reproductibilité.
+
+---
 
 ## 12. DataCite
 **Projet :** Le Mineur de Big Data Orphelin  
-**Description :** Analyse datasets bruts via 34 autres API.  
-**Workflow :**
-1. **Analyse** (Hugging Face, Papers with Code) : Traite données brutes. (`3min | 50 Req | 50k Tok`)
-2. **Protéines** (UniProt, NCBI Protein, PDB) : Relie aux structures. (`3min | 50 Req | 50k Tok`)
-3. **Maladies** (ClinicalTrials, ClinVar, OpenFDA) : Associe pathologies. (`3min | 50 Req | 50k Tok`)
-4. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Contextualise. (`2min | 40 Req | 40k Tok`)
-5. **Génome** (NCBI Gene, Ensembl, NCBI Nucleotide) : Annote génomiquement. (`2min | 40 Req | 40k Tok`)
-6. **Chimie** (ChEMBL, PubChem, RxNorm) : Lie aux molécules. (`1min | 30 Req | 30k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, Zenodo, Reactome, KEGG, STRING, BioGRID, WHO GHO, World Bank, GBIF, ArXiv, INSPIRE-HEP, NASA ADS, Wikidata, Wikipedia, Unpaywall) : Valide source et impact. (`1min | 60 Req | 40k Tok`)  
-**Détails Techniques :** `15 min` | `320 Req` | `200k Tok` | `40 Mo` | `REST/JSON` | `Agent extraction features + Alignement sémantique`
+**API Principale :** DataCite attribue des DOI aux datasets de recherche, permettant de tracer, citer et récupérer les données brutes sous-jacentes aux publications.
+
+**Workflow détaillé :**
+1. **Analyse** : Hugging Face/Papers with Code traitent les données brutes pour en extraire des features exploitables.
+2. **Protéines** : UniProt/NCBI Protein/PDB relient les datasets aux structures et séquences protéiques connues.
+3. **Maladies** : ClinicalTrials/ClinVar/OpenFDA associent les données aux pathologies et essais cliniques correspondants.
+4. **Littérature** : PubMed/EuroPMC/Semantic Scholar contextualisent les datasets dans la littérature existante.
+5. **Génome** : NCBI Gene/Ensembl/NCBI Nucleotide annotent les données génomiques contenues dans les datasets.
+6. **Chimie** : ChEMBL/PubChem/RxNorm lient les données chimiques aux molécules standardisées.
+7. **Intégrité** : CrossRef/OpenAlex/Zenodo/Reactome/KEGG/STRING/BioGRID/WHO GHO/World Bank/GBIF/ArXiv/INSPIRE-HEP/NASA ADS/Wikidata/Wikipedia/Unpaywall valident la source et l'impact.
+
+**Détails Techniques :**
+Temps : 15 minutes. | Requêtes : 320. | Tokens : 200 000. | Stockage : 40 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent extraction features + Agent alignement sémantique.
+
+---
 
 ## 13. Unpaywall
 **Projet :** L'IA de Science Ouverte et Équitable  
-**Description :** Création protocoles accessibles via 34 autres API.  
-**Workflow :**
-1. **Open Access** (PubMed, EuroPMC) : Identifie articles gratuits. (`4min | 80 Req | 80k Tok`)
-2. **Protocoles** (World Bank, WHO GHO) : Adapte aux pays pauvres. (`4min | 70 Req | 80k Tok`)
-3. **Molécules** (PubChem, ChEMBL, RxNorm) : Sélectionne médicaments accessibles. (`4min | 70 Req | 80k Tok`)
-4. **Entités** (NCBI Gene, UniProt, PDB) : Valide cibles biologiques. (`3min | 60 Req | 60k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Vérifie sécurité. (`3min | 60 Req | 60k Tok`)
-6. **Biologie** (Reactome, KEGG, STRING, BioGRID) : Confirme mécanismes. (`1min | 40 Req | 40k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, Semantic Scholar, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, Wikidata, Wikipedia, GBIF, NCBI Protein/Nucleotide, Ensembl) : Assure traçabilité et qualité. (`1min | 70 Req | 50k Tok`)  
-**Détails Techniques :** `20 min` | `450 Req` | `350k Tok` | `60 Mo` | `REST/JSON` | `Agent équité sanitaire + Synthèse protocoles`
+**API Principale :** Unpaywall identifie les versions en accès ouvert des articles scientifiques, facilitant l'accès légal aux connaissances sans barrière payante.
+
+**Workflow détaillé :**
+1. **Open Access** : PubMed/EuroPMC identifient les articles gratuits et leurs versions légales.
+2. **Protocoles** : World Bank/WHO GHO adaptent les protocoles aux contraintes des pays en développement.
+3. **Molécules** : PubChem/ChEMBL/RxNorm sélectionnent les médicaments accessibles et génériques.
+4. **Entités** : NCBI Gene/UniProt/PDB valident les cibles biologiques des traitements proposés.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA vérifient la sécurité et l'approbation réglementaire.
+6. **Biologie** : Reactome/KEGG/STRING/BioGRID confirment les mécanismes d'action biologiques.
+7. **Intégrité** : CrossRef/OpenAlex/Semantic Scholar/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/Wikidata/Wikipedia/GBIF/NCBI Protein/Nucleotide/Ensembl assurent la traçabilité et la qualité.
+
+**Détails Techniques :**
+Temps : 20 minutes. | Requêtes : 450. | Tokens : 350 000. | Stockage : 60 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent équité sanitaire + Agent synthèse protocoles.
+
+---
 
 ## 14. RCSB PDB
 **Projet :** Le Géomètre de la Vie  
-**Description :** Prédiction fixation médicament via 34 autres API.  
-**Workflow :**
-1. **Coordonnées 3D** (UniProt, NCBI Protein, Ensembl) : Valide structure protéine. (`6min | 50 Req | 80k Tok`)
-2. **Mutation** (ClinVar, NCBI Gene) : Simule impact variant. (`6min | 50 Req | 80k Tok`)
-3. **Médicament** (RxNorm, ChEMBL, PubChem) : Teste ligands. (`6min | 50 Req | 80k Tok`)
-4. **Physique** (NASA ADS, INSPIRE-HEP) : Valide forces liaison. (`6min | 50 Req | 80k Tok`)
-5. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Confirme études. (`3min | 40 Req | 60k Tok`)
-6. **Clinique** (ClinicalTrials, OpenFDA) : Évalue pertinence. (`2min | 30 Req | 40k Tok`)
-7. **Global** (Reactome, KEGG, STRING, BioGRID, CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall, NCBI Nucleotide) : Intègre contexte et accès. (`1min | 80 Req | 60k Tok`)  
-**Détails Techniques :** `30 min` | `250 Req` | `400k Tok` | `120 Mo` | `REST/XML` | `Agent docking moléculaire + Validation biophysique`
+**API Principale :** RCSB PDB archive les structures 3D des protéines, ADN et ARN, permettant d'analyser les formes moléculaires et les sites de liaison.
+
+**Workflow détaillé :**
+1. **Coordonnées 3D** : UniProt/NCBI Protein/Ensembl valident la séquence et l'annotation de la structure déposée.
+2. **Mutation** : ClinVar/NCBI Gene simulent l'impact des variants génétiques sur la structure 3D.
+3. **Médicament** : RxNorm/ChEMBL/PubChem testent virtuellement la fixation des ligands sur la structure.
+4. **Physique** : NASA ADS/INSPIRE-HEP valident les calculs de forces et d'énergie de liaison.
+5. **Littérature** : PubMed/EuroPMC/Semantic Scholar confirment les études expérimentales liées à la structure.
+6. **Clinique** : ClinicalTrials/OpenFDA évaluent la pertinence thérapeutique de la cible structurale.
+7. **Global** : Reactome/KEGG/STRING/BioGRID/CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall/NCBI Nucleotide intègrent le contexte biologique et l'accès.
+
+**Détails Techniques :**
+Temps : 30 minutes. | Requêtes : 250. | Tokens : 400 000. | Stockage : 120 Mo.
+Type API : REST/XML. | IA Multicouche : Agent docking moléculaire + Agent validation biophysique.
+
+---
 
 ## 15. Ensembl
 **Projet :** Le Navigateur de l'Évolution Génomique  
-**Description :** Comparaison gène humain/animal via 34 autres API.  
-**Workflow :**
-1. **Comparaison** (GBIF, NCBI Gene, NCBI Nucleotide) : Aligne espèces. (`3min | 80 Req | 50k Tok`)
-2. **Résistance** (PubMed, Reactome, KEGG) : Explique immunité naturelle. (`3min | 80 Req | 50k Tok`)
-3. **Annotation** (UniProt, NCBI Protein, PDB) : Valide protéines. (`3min | 80 Req | 50k Tok`)
-4. **Clinique** (ClinVar, ClinicalTrials, OpenFDA, RxNorm) : Traduit en médecine. (`2min | 60 Req | 40k Tok`)
-5. **Chimie** (ChEMBL, PubChem) : Identifie molécules conservées. (`2min | 60 Req | 40k Tok`)
-6. **Réseaux** (STRING, BioGRID) : Compare interactions. (`1min | 40 Req | 30k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, Semantic Scholar, EuroPMC, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, WHO GHO, World Bank, Wikidata, Wikipedia, Unpaywall) : Valide source et impact. (`1min | 80 Req | 50k Tok`)  
-**Détails Techniques :** `15 min` | `480 Req` | `220k Tok` | `35 Mo` | `REST/JSON` | `Agent phylogénie + Prédiction résistance`
+**API Principale :** Ensembl fournit des annotations génomiques comparatives, permettant d'aligner les gènes entre différentes espèces et d'étudier l'évolution.
+
+**Workflow détaillé :**
+1. **Comparaison** : GBIF/NCBI Gene/NCBI Nucleotide alignent les séquences entre espèces humaines et animales.
+2. **Résistance** : PubMed/Reactome/KEGG expliquent les mécanismes d'immunité naturelle observés chez certaines espèces.
+3. **Annotation** : UniProt/NCBI Protein/PDB valident les protéines codées par les gènes comparés.
+4. **Clinique** : ClinVar/ClinicalTrials/OpenFDA/RxNorm traduisent les découvertes évolutives en applications médicales.
+5. **Chimie** : ChEMBL/PubChem identifient les molécules conservées à travers l'évolution.
+6. **Réseaux** : STRING/BioGRID comparent les réseaux d'interaction entre espèces.
+7. **Intégrité** : CrossRef/OpenAlex/Semantic Scholar/EuroPMC/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/WHO GHO/World Bank/Wikidata/Wikipedia/Unpaywall valident la source et l'impact.
+
+**Détails Techniques :**
+Temps : 15 minutes. | Requêtes : 480. | Tokens : 220 000. | Stockage : 35 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent phylogénie + Agent prédiction résistance.
+
+---
 
 ## 16. STRING DB
 **Projet :** Le Tueur de Hubs Pathogènes  
-**Description :** Identification protéines centrales virus via 34 autres API.  
-**Workflow :**
-1. **Hubs** (ChEMBL, PDB, UniProt) : Cible structures clés. (`2min | 50 Req | 40k Tok`)
-2. **Effet Domino** (BioGRID, Reactome, KEGG) : Prédit effets secondaires. (`2min | 50 Req | 40k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Vérifie interactions. (`1min | 40 Req | 30k Tok`)
-4. **Structure** (NCBI Protein, Ensembl, INSPIRE-HEP) : Valide physique. (`1min | 40 Req | 30k Tok`)
-5. **Génétique** (ClinVar, NCBI Gene) : Analyse variants. (`1min | 40 Req | 30k Tok`)
-6. **Clinique** (ClinicalTrials, OpenFDA, RxNorm) : Évalue traitements. (`1min | 40 Req | 30k Tok`)
-7. **Global** (CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, NASA ADS, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall, PubChem, NCBI Nucleotide) : Intègre contexte et accès. (`0min | 80 Req | 50k Tok`)  
-**Détails Techniques :** `8 min` | `300 Req` | `150k Tok` | `18 Mo` | `REST/JSON` | `Agent détection hubs + Effets secondaires`
+**API Principale :** STRING DB prédit et archive les interactions protéine-protéine, permettant d'identifier les nœuds centraux dans les réseaux biologiques.
+
+**Workflow détaillé :**
+1. **Hubs** : ChEMBL/PDB/UniProt ciblent les structures clés des protéines hubs identifiées.
+2. **Effet Domino** : BioGRID/Reactome/KEGG prédisent les effets secondaires de la perturbation des hubs.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar vérifient les interactions rapportées dans les études.
+4. **Structure** : NCBI Protein/Ensembl/INSPIRE-HEP valident la physique des interactions.
+5. **Génétique** : ClinVar/NCBI Gene analysent l'impact des variants sur les interactions.
+6. **Clinique** : ClinicalTrials/OpenFDA/RxNorm évaluent les traitements ciblant ces réseaux.
+7. **Global** : CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/NASA ADS/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall/PubChem/NCBI Nucleotide intègrent le contexte et l'accès.
+
+**Détails Techniques :**
+Temps : 8 minutes. | Requêtes : 300. | Tokens : 150 000. | Stockage : 18 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent détection hubs + Agent effets secondaires.
+
+---
 
 ## 17. Reactome
 **Projet :** Le Simulateur de Cascade Thérapeutique  
-**Description :** Modélisation injection produit via 34 autres API.  
-**Workflow :**
-1. **Voies** (EuroPMC, PubMed, Semantic Scholar) : Suit étapes biochimiques. (`4min | 60 Req | 60k Tok`)
-2. **Annotation** (NCBI Gene, UniProt, Ensembl, PDB) : Valide molécules. (`4min | 60 Req | 60k Tok`)
-3. **Chimie** (ChEMBL, PubChem, RxNorm) : Suit métabolisme médicament. (`4min | 60 Req | 60k Tok`)
-4. **Clinique** (ClinicalTrials, OpenFDA, ClinVar) : Vérifie sécurité. (`3min | 50 Req | 50k Tok`)
-5. **Réseaux** (STRING, BioGRID, KEGG) : Confirme interactions. (`2min | 40 Req | 40k Tok`)
-6. **Impact** (CrossRef, OpenAlex, DataCite, WHO GHO, World Bank, GBIF) : Évalue portée. (`1min | 40 Req | 30k Tok`)
-7. **Intégrité** (Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, Wikidata, Wikipedia, Unpaywall, NCBI Protein/Nucleotide) : Assure reproductibilité. (`0min | 50 Req | 40k Tok`)  
-**Détails Techniques :** `18 min` | `360 Req` | `280k Tok` | `45 Mo` | `REST/JSON` | `Agent modélisation cinétique + Validation expérimentale`
+**API Principale :** Reactome détaille les voies biochimiques et les réactions moléculaires, permettant de modéliser l'effet d'un produit dans la cellule.
+
+**Workflow détaillé :**
+1. **Voies** : EuroPMC/PubMed/Semantic Scholar suivent les étapes biochimiques décrites dans la littérature.
+2. **Annotation** : NCBI Gene/UniProt/Ensembl/PDB valident les molécules impliquées dans les voies.
+3. **Chimie** : ChEMBL/PubChem/RxNorm suivent le métabolisme du médicament dans les voies.
+4. **Clinique** : ClinicalTrials/OpenFDA/ClinVar vérifient la sécurité de la modulation des voies.
+5. **Réseaux** : STRING/BioGRID/KEGG confirment les interactions au sein des voies.
+6. **Impact** : CrossRef/OpenAlex/DataCite/WHO GHO/World Bank/GBIF évaluent la portée de l'intervention.
+7. **Intégrité** : Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/Wikidata/Wikipedia/Unpaywall/NCBI Protein/Nucleotide assurent la reproductibilité.
+
+**Détails Techniques :**
+Temps : 18 minutes. | Requêtes : 360. | Tokens : 280 000. | Stockage : 45 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent modélisation cinétique + Agent validation expérimentale.
+
+---
 
 ## 18. GBIF
 **Projet :** Le Radar de Prédiction des Pandémies  
-**Description :** Liaison position faune/virus via 34 autres API.  
-**Workflow :**
-1. **Position** (WHO GHO, World Bank) : Cartographie infrastructures. (`4min | 100 Req | 50k Tok`)
-2. **Virus** (NCBI Nucleotide, NCBI Protein, UniProt) : Identifie pathogènes. (`4min | 100 Req | 50k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Recherche épidémiologie. (`4min | 100 Req | 50k Tok`)
-4. **Structure** (PDB, INSPIRE-HEP) : Analyse stabilité virale. (`3min | 80 Req | 40k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA, RxNorm) : Prépare réponses. (`3min | 80 Req | 40k Tok`)
-6. **Chimie** (ChEMBL, PubChem) : Stocke antiviraux. (`1min | 40 Req | 30k Tok`)
-7. **Intégrité** (Reactome, KEGG, STRING, BioGRID, CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, NASA ADS, Wikidata, Wikipedia, Unpaywall, NCBI Gene, Ensembl) : Valide données et accès. (`1min | 100 Req | 40k Tok`)  
-**Détails Techniques :** `20 min` | `700 Req` | `200k Tok` | `90 Mo` | `REST/JSON` | `Agent modélisation épidémiologique + Alerte précoce`
+**API Principale :** GBIF agrège les données d'occurrence d'espèces, permettant de géolocaliser les réservoirs animaux de pathogènes.
+
+**Workflow détaillé :**
+1. **Position** : WHO GHO/World Bank cartographient les infrastructures sanitaires dans les zones à risque.
+2. **Virus** : NCBI Nucleotide/NCBI Protein/UniProt identifient les pathogènes associés aux espèces localisées.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar recherchent les études épidémiologiques liées.
+4. **Structure** : PDB/INSPIRE-HEP analysent la stabilité virale des pathogènes identifiés.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA/RxNorm préparent les réponses thérapeutiques.
+6. **Chimie** : ChEMBL/PubChem stockent les informations sur les antiviraux potentiels.
+7. **Intégrité** : Reactome/KEGG/STRING/BioGRID/CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/NASA ADS/Wikidata/Wikipedia/Unpaywall/NCBI Gene/Ensembl valident les données et l'accès.
+
+**Détails Techniques :**
+Temps : 20 minutes. | Requêtes : 700. | Tokens : 200 000. | Stockage : 90 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent modélisation épidémiologique + Agent alerte précoce.
+
+---
 
 ## 19. RxNorm
 **Projet :** L'Encyclopédie des Médicaments Connectés  
-**Description :** Normalisation médicament via 34 autres API.  
-**Workflow :**
-1. **Cible** (UniProt, PDB, NCBI Protein) : Identifie récepteurs. (`1min | 40 Req | 20k Tok`)
-2. **Prix** (World Bank, WHO GHO) : Évalue coût. (`1min | 40 Req | 20k Tok`)
-3. **Brevets** (CrossRef, OpenAlex) : Vérifie IP. (`0.5min | 40 Req | 10k Tok`)
-4. **Mentions** (Wikipedia EN/FR, Wikidata) : Confime usage. (`0.5min | 40 Req | 10k Tok`)
-5. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Valide études. (`0.5min | 40 Req | 10k Tok`)
-6. **Molécules** (NCBI Gene, ChEMBL, PubChem) : Analyse structure. (`0.5min | 40 Req | 10k Tok`)
-7. **Clinique & Global** (ClinVar, ClinicalTrials, OpenFDA, Reactome, KEGG, STRING, BioGRID, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, GBIF, Unpaywall, NCBI Nucleotide, Ensembl) : Intègre sécurité et contexte. (`0min | 40 Req | 20k Tok`)  
-**Détails Techniques :** `4 min` | `200 Req` | `80k Tok` | `6 Mo` | `REST/JSON` | `Agent normalisation sémantique + Évaluation économique`
+**API Principale :** RxNorm normalise les noms de médicaments cliniques, permettant de lier les produits commerciaux aux ingrédients actifs et aux codes sémantiques.
+
+**Workflow détaillé :**
+1. **Cible** : UniProt/PDB/NCBI Protein identifient les récepteurs biologiques des médicaments.
+2. **Prix** : World Bank/WHO GHO évaluent le coût et l'accessibilité économique.
+3. **Brevets** : CrossRef/OpenAlex vérifient le statut de la propriété intellectuelle.
+4. **Mentions** : Wikipedia EN/FR/Wikidata confirment l'usage courant et la vulgarisation.
+5. **Littérature** : PubMed/EuroPMC/Semantic Scholar valident les études cliniques supportant l'usage.
+6. **Molécules** : NCBI Gene/ChEMBL/PubChem analysent la structure chimique sous-jacente.
+7. **Clinique & Global** : ClinVar/ClinicalTrials/OpenFDA/Reactome/KEGG/STRING/BioGRID/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/GBIF/Unpaywall/NCBI Nucleotide/Ensembl intègrent la sécurité et le contexte.
+
+**Détails Techniques :**
+Temps : 4 minutes. | Requêtes : 200. | Tokens : 80 000. | Stockage : 6 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent normalisation sémantique + Agent évaluation économique.
+
+---
 
 ## 20. OpenFDA
 **Projet :** Le Détecteur de Risques en Temps Réel  
-**Description :** Analyse effets secondaires via 34 autres API.  
-**Workflow :**
-1. **Génétique** (ClinVar, NCBI Gene, Ensembl) : Cherche causes génétiques. (`3min | 80 Req | 60k Tok`)
-2. **Structure** (PDB, UniProt, NCBI Protein) : Analyse dommages moléculaires. (`3min | 80 Req | 60k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Confirme signaux. (`3min | 80 Req | 60k Tok`)
-4. **Molécules** (ChEMBL, PubChem, RxNorm) : Identifie coupables chimiques. (`3min | 80 Req | 60k Tok`)
-5. **Clinique** (ClinicalTrials, WHO GHO) : Évalue ampleur. (`2min | 60 Req | 50k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Comprend voies toxiques. (`1min | 40 Req | 40k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall, NCBI Nucleotide) : Valide source et contexte. (`0min | 80 Req | 50k Tok`)  
-**Détails Techniques :** `15 min` | `500 Req` | `300k Tok` | `55 Mo` | `REST/JSON` | `Agent pharmacovigilance + Explication causale`
+**API Principale :** OpenFDA fournit les données de sécurité des médicaments et aliments (effets indésirables, rappels), permettant une surveillance post-commercialisation.
+
+**Workflow détaillé :**
+1. **Génétique** : ClinVar/NCBI Gene/Ensembl cherchent les causes génétiques des effets indésirables.
+2. **Structure** : PDB/UniProt/NCBI Protein analysent les dommages moléculaires potentiels.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar confirment les signaux de sécurité.
+4. **Molécules** : ChEMBL/PubChem/RxNorm identifient les structures chimiques responsables.
+5. **Clinique** : ClinicalTrials/WHO GHO évaluent l'ampleur et la gravité des effets.
+6. **Métabolisme** : Reactome/KEGG/STRING/BioGRID comprennent les voies toxiques impliquées.
+7. **Intégrité** : CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall/NCBI Nucleotide valident la source et le contexte.
+
+**Détails Techniques :**
+Temps : 15 minutes. | Requêtes : 500. | Tokens : 300 000. | Stockage : 55 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent pharmacovigilance + Agent explication causale.
+
+---
 
 ## 21. ClinicalTrials
 **Projet :** L'Optimiseur d'Essais Cliniques  
-**Description :** Lecture protocole et suggestion biomarqueurs via 34 autres API.  
-**Workflow :**
-1. **Biomarqueurs** (KEGG, Reactome, UniProt) : Sélectionne cibles. (`3min | 60 Req | 50k Tok`)
-2. **Modèle Animal** (Ensembl, GBIF, NCBI Gene) : Vérifie pertinence espèce. (`3min | 60 Req | 50k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Valide état de l'art. (`3min | 60 Req | 50k Tok`)
-4. **Molécules** (NCBI Protein, PDB, ChEMBL, PubChem, RxNorm) : Confirme candidats. (`3min | 60 Req | 50k Tok`)
-5. **Génétique** (ClinVar, OpenFDA) : Inclut variants. (`1min | 40 Req | 40k Tok`)
-6. **Réseaux** (STRING, BioGRID) : Analyse interactions. (`1min | 40 Req | 40k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, WHO GHO, World Bank, Wikidata, Wikipedia, Unpaywall, NCBI Nucleotide) : Assure traçabilité. (`0min | 40 Req | 40k Tok`)  
-**Détails Techniques :** `14 min` | `330 Req` | `250k Tok` | `42 Mo` | `REST/JSON` | `Agent design essais + Sélection biomarqueurs`
+**API Principale :** ClinicalTrials registre les essais cliniques mondiaux, permettant d'analyser les protocoles, les critères d'inclusion et les résultats.
+
+**Workflow détaillé :**
+1. **Biomarqueurs** : KEGG/Reactome/UniProt sélectionnent les cibles moléculaires pour les essais.
+2. **Modèle Animal** : Ensembl/GBIF/NCBI Gene vérifient la pertinence des espèces modèles utilisées.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar valident l'état de l'art scientifique.
+4. **Molécules** : NCBI Protein/PDB/ChEMBL/PubChem/RxNorm confirment les candidats médicaments testés.
+5. **Génétique** : ClinVar/OpenFDA incluent les variants génétiques dans les critères.
+6. **Réseaux** : STRING/BioGRID analysent les interactions ciblées par le traitement.
+7. **Intégrité** : CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/WHO GHO/World Bank/Wikidata/Wikipedia/Unpaywall/NCBI Nucleotide assurent la traçabilité.
+
+**Détails Techniques :**
+Temps : 14 minutes. | Requêtes : 330. | Tokens : 250 000. | Stockage : 42 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent design essais + Agent sélection biomarqueurs.
+
+---
 
 ## 22. WHO GHO
 **Projet :** Le Stratège de la Santé Mondiale  
-**Description :** Identification zone mortalité et traitement via 34 autres API.  
-**Workflow :**
-1. **Traitement** (PubMed, EuroPMC, Semantic Scholar) : Recherche solutions. (`2min | 60 Req | 40k Tok`)
-2. **Molécules** (NCBI Gene, UniProt, PDB, ChEMBL, PubChem, RxNorm) : Valide candidats. (`2min | 60 Req | 40k Tok`)
-3. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Vérifie sécurité. (`2min | 60 Req | 40k Tok`)
-4. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Confirme mécanismes. (`2min | 60 Req | 40k Tok`)
-5. **Influence** (CrossRef, OpenAlex, DataCite) : Évalue preuves. (`1min | 50 Req | 30k Tok`)
-6. **Écologie** (GBIF, World Bank) : Analyse contexte local. (`1min | 50 Req | 30k Tok`)
-7. **Intégrité** (Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, Wikidata, Wikipedia, Unpaywall, NCBI Protein/Nucleotide, Ensembl) : Assure accès et qualité. (`0min | 60 Req | 40k Tok`)  
-**Détails Techniques :** `10 min` | `400 Req` | `150k Tok` | `28 Mo` | `REST/JSON` | `Agent priorisation sanitaire + Optimisation coût-efficacité`
+**API Principale :** WHO GHO fournit les statistiques sanitaires mondiales, permettant d'identifier les zones de mortalité et les besoins en traitements.
+
+**Workflow détaillé :**
+1. **Traitement** : PubMed/EuroPMC/Semantic Scholar recherchent les solutions thérapeutiques existantes.
+2. **Molécules** : NCBI Gene/UniProt/PDB/ChEMBL/PubChem/RxNorm valident les candidats médicaments.
+3. **Clinique** : ClinVar/ClinicalTrials/OpenFDA vérifient la sécurité et l'efficacité.
+4. **Métabolisme** : Reactome/KEGG/STRING/BioGRID confirment les mécanismes d'action.
+5. **Influence** : CrossRef/OpenAlex/DataCite évaluent la qualité des preuves scientifiques.
+6. **Écologie** : GBIF/World Bank analysent le contexte environnemental et économique local.
+7. **Intégrité** : Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/Wikidata/Wikipedia/Unpaywall/NCBI Protein/Nucleotide/Ensembl assurent l'accès et la qualité.
+
+**Détails Techniques :**
+Temps : 10 minutes. | Requêtes : 400. | Tokens : 150 000. | Stockage : 28 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent priorisation sanitaire + Agent optimisation coût-efficacité.
+
+---
 
 ## 23. World Bank
 **Projet :** L'Économiste de la Bio-Ingénierie  
-**Description :** Calcul viabilité synthèse molécule via 34 autres API.  
-**Workflow :**
-1. **PIB** (PubChem, WHO GHO) : Lie molécule à économie. (`1min | 40 Req | 20k Tok`)
-2. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Valide science. (`1min | 40 Req | 20k Tok`)
-3. **Molécules** (NCBI Gene, UniProt, PDB, ChEMBL, RxNorm) : Confirme cible. (`1min | 40 Req | 20k Tok`)
-4. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Évalue marché. (`1min | 40 Req | 20k Tok`)
-5. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Analyse complexité. (`1min | 40 Req | 20k Tok`)
-6. **Influence** (CrossRef, OpenAlex, DataCite) : Vérifie intérêt. (`0.5min | 30 Req | 10k Tok`)
-7. **Global** (GBIF, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, Wikidata, Wikipedia, Unpaywall, NCBI Protein/Nucleotide, Ensembl) : Intègre contexte et accès. (`0.5min | 50 Req | 20k Tok`)  
-**Détails Techniques :** `6 min` | `220 Req` | `100k Tok` | `14 Mo` | `REST/JSON` | `Agent modélisation économique + Évaluation viabilité`
+**API Principale :** World Bank fournit des données économiques mondiales, permettant d'évaluer la viabilité financière des projets bio-ingénierie.
+
+**Workflow détaillé :**
+1. **PIB** : PubChem/WHO GHO lient la production de molécules aux indicateurs économiques.
+2. **Littérature** : PubMed/EuroPMC/Semantic Scholar valident la base scientifique du projet.
+3. **Molécules** : NCBI Gene/UniProt/PDB/ChEMBL/RxNorm confirment la cible thérapeutique.
+4. **Clinique** : ClinVar/ClinicalTrials/OpenFDA évaluent le marché potentiel et les risques.
+5. **Métabolisme** : Reactome/KEGG/STRING/BioGRID analysent la complexité de production.
+6. **Influence** : CrossRef/OpenAlex/DataCite vérifient l'intérêt académique et industriel.
+7. **Global** : GBIF/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/Wikidata/Wikipedia/Unpaywall/NCBI Protein/Nucleotide/Ensembl intègrent le contexte et l'accès.
+
+**Détails Techniques :**
+Temps : 6 minutes. | Requêtes : 220. | Tokens : 100 000. | Stockage : 14 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent modélisation économique + Agent évaluation viabilité.
+
+---
 
 ## 24. KEGG
 **Projet :** Le Cartographe de la Vie Cellulaire  
-**Description :** Dessin carte métabolique et inhibiteurs via 34 autres API.  
-**Workflow :**
-1. **Enzyme** (PDB, UniProt, NCBI Protein) : Valide structure. (`2min | 60 Req | 40k Tok`)
-2. **Inhibiteurs** (ChEMBL, PubChem, RxNorm) : Identifie bloqueurs. (`2min | 60 Req | 40k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Confirme voies. (`2min | 60 Req | 40k Tok`)
-4. **Gènes** (NCBI Gene, Ensembl, NCBI Nucleotide) : Lie génome. (`2min | 60 Req | 40k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Évalue impact maladie. (`2min | 60 Req | 40k Tok`)
-6. **Réseaux** (Reactome, STRING, BioGRID) : Complète carte. (`1min | 40 Req | 30k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall) : Assure traçabilité. (`1min | 40 Req | 30k Tok`)  
-**Détails Techniques :** `12 min` | `380 Req` | `200k Tok` | `38 Mo` | `REST/JSON` | `Agent reconstruction voies + Prédiction inhibition`
+**API Principale :** KEGG dessine les cartes métaboliques et les voies de signalisation, permettant de visualiser les interactions moléculaires dans la cellule.
+
+**Workflow détaillé :**
+1. **Enzyme** : PDB/UniProt/NCBI Protein valident la structure des enzymes de la voie.
+2. **Inhibiteurs** : ChEMBL/PubChem/RxNorm identifient les molécules bloquant la voie.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar confirment les étapes de la voie.
+4. **Gènes** : NCBI Gene/Ensembl/NCBI Nucleotide lient la voie au génome.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA évaluent l'impact de la voie sur les maladies.
+6. **Réseaux** : Reactome/STRING/BioGRID complètent la carte d'interaction.
+7. **Intégrité** : CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall assurent la traçabilité.
+
+**Détails Techniques :**
+Temps : 12 minutes. | Requêtes : 380. | Tokens : 200 000. | Stockage : 38 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent reconstruction voies + Agent prédiction inhibition.
+
+---
 
 ## 25. Wikipedia EN
 **Projet :** Le Validateur de la Vulgarisation  
-**Description :** Vérification affirmations article via 34 autres API.  
-**Workflow :**
-1. **Affirmations** (NCBI Gene, UniProt, PubMed) : Compare aux données brutes. (`4min | 150 Req | 80k Tok`)
-2. **Erreurs** (Wikidata, CrossRef) : Signale incohérences. (`4min | 150 Req | 80k Tok`)
-3. **Littérature** (EuroPMC, Semantic Scholar) : Valide sources. (`4min | 150 Req | 80k Tok`)
-4. **Molécules** (NCBI Protein, PDB, ChEMBL, PubChem, RxNorm) : Vérifie chimie. (`4min | 150 Req | 80k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Confirme médecine. (`2min | 100 Req | 60k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Valide biologie. (`1min | 50 Req | 40k Tok`)
-7. **Global** (OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, WHO GHO, World Bank, GBIF, Wikipedia FR, Unpaywall, NCBI Nucleotide, Ensembl) : Intègre contexte. (`1min | 150 Req | 60k Tok`)  
-**Détails Techniques :** `20 min` | `900 Req` | `400k Tok` | `70 Mo` | `REST/JSON` | `Agent fact-checking + Correction sémantique`
+**API Principale :** Wikipedia EN fournit des articles encyclopédiques en anglais, servant de référence pour vérifier la cohérence des connaissances publiques.
+
+**Workflow détaillé :**
+1. **Affirmations** : NCBI Gene/UniProt/PubMed comparent les affirmations aux données brutes scientifiques.
+2. **Erreurs** : Wikidata/CrossRef signalent les incohérences et les sources obsolètes.
+3. **Littérature** : EuroPMC/Semantic Scholar valident les sources citées dans l'article.
+4. **Molécules** : NCBI Protein/PDB/ChEMBL/PubChem/RxNorm vérifient les informations chimiques.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA confirment les informations médicales.
+6. **Métabolisme** : Reactome/KEGG/STRING/BioGRID valident les descriptions biologiques.
+7. **Global** : OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/WHO GHO/World Bank/GBIF/Wikipedia FR/Unpaywall/NCBI Nucleotide/Ensembl intègrent le contexte.
+
+**Détails Techniques :**
+Temps : 20 minutes. | Requêtes : 900. | Tokens : 400 000. | Stockage : 70 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent fact-checking + Agent correction sémantique.
+
+---
 
 ## 26. Wikipedia FR
 **Projet :** Le Pont Scientifique Francophone  
-**Description :** Identification lacunes et traduction via 34 autres API.  
-**Workflow :**
-1. **Traduction** (EuroPMC, PubMed, Semantic Scholar) : Source articles. (`2min | 80 Req | 40k Tok`)
-2. **Validation** (NCBI Gene, UniProt, PDB, ChEMBL, PubChem, RxNorm) : Vérifie science. (`2min | 80 Req | 40k Tok`)
-3. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Adapte médecine. (`2min | 80 Req | 40k Tok`)
-4. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Traduit voies. (`2min | 80 Req | 40k Tok`)
-5. **Influence** (CrossRef, OpenAlex, DataCite) : Cite sources. (`1min | 40 Req | 20k Tok`)
-6. **Économie** (GBIF, WHO GHO, World Bank) : Contexte local. (`1min | 40 Req | 20k Tok`)
-7. **Intégrité** (Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, Wikidata, Unpaywall, Wikipedia EN, NCBI Protein/Nucleotide, Ensembl) : Assure qualité. (`0min | 40 Req | 20k Tok`)  
-**Détails Techniques :** `10 min` | `400 Req` | `150k Tok` | `22 Mo` | `REST/JSON` | `Agent traduction scientifique + Détection lacunes`
+**API Principale :** Wikipedia FR adapte les connaissances scientifiques en français, identifiant les lacunes de traduction et de contenu.
+
+**Workflow détaillé :**
+1. **Traduction** : EuroPMC/PubMed/Semantic Scholar sourcent les articles scientifiques à traduire.
+2. **Validation** : NCBI Gene/UniProt/PDB/ChEMBL/PubChem/RxNorm vérifient l'exactitude scientifique.
+3. **Clinique** : ClinVar/ClinicalTrials/OpenFDA adaptent les termes médicaux.
+4. **Métabolisme** : Reactome/KEGG/STRING/BioGRID traduisent les concepts de voies biologiques.
+5. **Influence** : CrossRef/OpenAlex/DataCite citent les sources appropriées.
+6. **Économie** : GBIF/WHO GHO/World Bank contextualisent localement.
+7. **Intégrité** : Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/Wikidata/Unpaywall/Wikipedia EN/NCBI Protein/Nucleotide/Ensembl assurent la qualité.
+
+**Détails Techniques :**
+Temps : 10 minutes. | Requêtes : 400. | Tokens : 150 000. | Stockage : 22 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent traduction scientifique + Agent détection lacunes.
+
+---
 
 ## 27. Zenodo
 **Projet :** Le Gardien de la Reproductibilité  
-**Description :** Test script de recherche via 34 autres API.  
-**Workflow :**
-1. **Test** (PDB, NCBI Gene, NCBI Protein) : Vérifie données entrée. (`4min | 60 Req | 60k Tok`)
-2. **Algorithme** (Papers with Code, Hugging Face) : Compare performances. (`4min | 60 Req | 60k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Contextualise. (`4min | 60 Req | 60k Tok`)
-4. **Données** (UniProt, ChEMBL, PubChem, RxNorm) : Valide sortie. (`4min | 60 Req | 60k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Évalue utilité. (`2min | 40 Req | 40k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Vérifie bio. (`1min | 30 Req | 30k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, DataCite, ArXiv, INSPIRE-HEP, NASA ADS, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall, NCBI Nucleotide, Ensembl) : Assure traçabilité. (`1min | 50 Req | 40k Tok`)  
-**Détails Techniques :** `20 min` | `300 Req` | `300k Tok` | `65 Mo` | `REST/JSON` | `Agent test automatisé + Benchmark algorithmique`
+**API Principale :** Zenodo archive les outputs de recherche (datasets, code, posters), garantissant la pérennité et l'accès aux matériaux supplémentaires.
+
+**Workflow détaillé :**
+1. **Test** : PDB/NCBI Gene/NCBI Protein vérifient les données d'entrée des scripts archivés.
+2. **Algorithme** : Papers with Code/Hugging Face comparent les performances des codes déposés.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar contextualisent l'archive dans la publication.
+4. **Données** : UniProt/ChEMBL/PubChem/RxNorm valident les sorties des scripts.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA évaluent l'utilité clinique des outils.
+6. **Métabolisme** : Reactome/KEGG/STRING/BioGRID vérifient la cohérence biologique.
+7. **Intégrité** : CrossRef/OpenAlex/DataCite/ArXiv/INSPIRE-HEP/NASA ADS/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall/NCBI Nucleotide/Ensembl assurent la traçabilité.
+
+**Détails Techniques :**
+Temps : 20 minutes. | Requêtes : 300. | Tokens : 300 000. | Stockage : 65 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent test automatisé + Agent benchmark algorithmique.
+
+---
 
 ## 28. NASA ADS
 **Projet :** L'Explorateur d'Astro-Biologie  
-**Description :** Physique étoiles et résistance protéines via 34 autres API.  
-**Workflow :**
-1. **Protéines** (UniProt, PDB, NCBI Protein) : Cible extrêmophiles. (`3min | 50 Req | 40k Tok`)
-2. **Chimie** (PubChem, ChEMBL, RxNorm) : Applique chimie. (`3min | 50 Req | 40k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Cherche astrobio. (`3min | 50 Req | 40k Tok`)
-4. **Génome** (NCBI Gene, Ensembl, NCBI Nucleotide) : Analyse ADN. (`3min | 50 Req | 40k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Applications médicales. (`2min | 40 Req | 30k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Voies résistance. (`1min | 30 Req | 30k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall) : Valide source. (`0min | 30 Req | 30k Tok`)  
-**Détails Techniques :** `15 min` | `250 Req` | `180k Tok` | `32 Mo` | `REST/JSON` | `Agent modélisation extrêmophile + Transfert interdisciplinaire`
+**API Principale :** NASA ADS indexe la littérature en astronomie et physique, permettant de croiser les concepts physiques avec la biologie (ex: extrêmophiles).
+
+**Workflow détaillé :**
+1. **Protéines** : UniProt/PDB/NCBI Protein ciblent les protéines d'organismes extrêmophiles.
+2. **Chimie** : PubChem/ChEMBL/RxNorm appliquent les concepts chimiques aux conditions spatiales.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar cherchent les études en astrobiologie.
+4. **Génome** : NCBI Gene/Ensembl/NCBI Nucleotide analysent l'ADN résistant aux radiations.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA explorent les applications médicales terrestres.
+6. **Métabolisme** : Reactome/KEGG/STRING/BioGRID étudient les voies de résistance.
+7. **Intégrité** : CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall valident la source.
+
+**Détails Techniques :**
+Temps : 15 minutes. | Requêtes : 250. | Tokens : 180 000. | Stockage : 32 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent modélisation extrêmophile + Agent transfert interdisciplinaire.
+
+---
 
 ## 29. BioGRID
 **Projet :** Le Vérificateur de Réalité Biologique  
-**Description :** Vérification interaction protéine-protéine via 34 autres API.  
-**Workflow :**
-1. **Confirmation** (EuroPMC, PubMed, PDB) : Preuve texte/structure. (`2min | 60 Req | 40k Tok`)
-2. **Littérature** (Semantic Scholar, OpenAlex) : Vérifie citations. (`2min | 60 Req | 40k Tok`)
-3. **Structure** (NCBI Protein, UniProt, Ensembl) : Valide formes. (`2min | 60 Req | 40k Tok`)
-4. **Génétique** (ClinVar, NCBI Gene) : Impact variants. (`1min | 40 Req | 30k Tok`)
-5. **Clinique** (ChEMBL, PubChem, RxNorm, OpenFDA, ClinicalTrials) : Applications. (`1min | 40 Req | 30k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING) : Contexte voies. (`0min | 30 Req | 20k Tok`)
-7. **Intégrité** (CrossRef, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall, NCBI Nucleotide) : Assure traçabilité. (`0min | 30 Req | 20k Tok`)  
-**Détails Techniques :** `8 min` | `320 Req` | `120k Tok` | `16 Mo` | `REST/JSON` | `Agent validation expérimentale + Détection faux positifs`
+**API Principale :** BioGRID archive les interactions génétiques et protéiques validées expérimentalement, servant de vérité terrain pour les réseaux.
+
+**Workflow détaillé :**
+1. **Confirmation** : EuroPMC/PubMed/PDB apportent la preuve textuelle et structurale de l'interaction.
+2. **Littérature** : Semantic Scholar/OpenAlex vérifient le nombre de citations et la reconnaissance.
+3. **Structure** : NCBI Protein/UniProt/Ensembl valident les formes des protéines interactrices.
+4. **Génétique** : ClinVar/NCBI Gene évaluent l'impact des variants sur l'interaction.
+5. **Clinique** : ChEMBL/PubChem/RxNorm/OpenFDA/ClinicalTrials explorent les applications thérapeutiques.
+6. **Métabolisme** : Reactome/KEGG/STRING contextualisent l'interaction dans les voies.
+7. **Intégrité** : CrossRef/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall/NCBI Nucleotide assurent la traçabilité.
+
+**Détails Techniques :**
+Temps : 8 minutes. | Requêtes : 320. | Tokens : 120 000. | Stockage : 16 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent validation expérimentale + Agent détection faux positifs.
+
+---
 
 ## 30. PubChem
 **Projet :** Le Créateur de Matière Thérapeutique  
-**Description :** Prédiction activité structure chimique via 34 autres API.  
-**Workflow :**
-1. **Activité** (UniProt, PDB, NCBI Gene) : Cibles biologiques. (`3min | 80 Req | 50k Tok`)
-2. **Risques** (OpenFDA, ClinicalTrials, ClinVar) : Sécurité clinique. (`3min | 80 Req | 50k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Études existantes. (`3min | 80 Req | 50k Tok`)
-4. **Standardisation** (ChEMBL, RxNorm, NCBI Protein) : Normalise données. (`2min | 60 Req | 40k Tok`)
-5. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Voies impactées. (`2min | 60 Req | 40k Tok`)
-6. **Influence** (CrossRef, OpenAlex, DataCite) : Impact académique. (`1min | 40 Req | 30k Tok`)
-7. **Global** (Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall, NCBI Nucleotide, Ensembl) : Intègre contexte. (`0min | 100 Req | 40k Tok`)  
-**Détails Techniques :** `14 min` | `500 Req` | `250k Tok` | `48 Mo` | `REST/JSON` | `Agent prédiction activité + Évaluation risques`
+**API Principale :** PubChem fournit des informations sur les structures chimiques, les propriétés et les activités biologiques des molécules.
+
+**Workflow détaillé :**
+1. **Activité** : UniProt/PDB/NCBI Gene identifient les cibles biologiques des molécules.
+2. **Risques** : OpenFDA/ClinicalTrials/ClinVar évaluent la sécurité clinique et les contre-indications.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar agrègent les études existantes sur la molécule.
+4. **Standardisation** : ChEMBL/RxNorm/NCBI Protein normalisent les données chimiques et biologiques.
+5. **Métabolisme** : Reactome/KEGG/STRING/BioGRID identifient les voies impactées par la molécule.
+6. **Influence** : CrossRef/OpenAlex/DataCite mesurent l'impact académique des recherches.
+7. **Global** : Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall/NCBI Nucleotide/Ensembl intègrent le contexte.
+
+**Détails Techniques :**
+Temps : 14 minutes. | Requêtes : 500. | Tokens : 250 000. | Stockage : 48 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent prédiction activité + Agent évaluation risques.
+
+---
 
 ## 31. Wikidata
 **Projet :** Le Cerveau Central du Graphe de Découverte  
-**Description :** Requête SPARQL et complétion liens via 34 autres API.  
-**Workflow :**
-1. **Lien Manquant** (PubMed, EuroPMC, Semantic Scholar) : Cherche preuves. (`1min | 200 Req | 20k Tok`)
-2. **Biomédical** (NCBI Gene, UniProt, PDB, ChEMBL, PubChem, RxNorm) : Valide entités. (`1min | 200 Req | 20k Tok`)
-3. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Lie maladies. (`1min | 200 Req | 20k Tok`)
-4. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Lie voies. (`1min | 200 Req | 20k Tok`)
-5. **Influence** (CrossRef, OpenAlex, DataCite) : Lie publications. (`0.5min | 100 Req | 10k Tok`)
-6. **Économie** (GBIF, WHO GHO, World Bank) : Lie lieux. (`0.5min | 100 Req | 10k Tok`)
-7. **Intégrité** (Zenodo, Papers with Code, Hugging Face, ArXiv, INSPIRE-HEP, NASA ADS, Wikipedia, Unpaywall, NCBI Protein/Nucleotide, Ensembl) : Assure accès. (`0min | 200 Req | 20k Tok`)  
-**Détails Techniques :** `5 min` | `1200 Req` | `100k Tok` | `10 Mo` | `SPARQL/REST` | `Agent complétion graphe + Résolution ambiguïtés`
+**API Principale :** Wikidata stocke des données structurées libres, permettant de lier des entités hétérogènes via des requêtes SPARQL.
+
+**Workflow détaillé :**
+1. **Lien Manquant** : PubMed/EuroPMC/Semantic Scholar cherchent les preuves pour compléter les liens.
+2. **Biomédical** : NCBI Gene/UniProt/PDB/ChEMBL/PubChem/RxNorm valident les entités biologiques.
+3. **Clinique** : ClinVar/ClinicalTrials/OpenFDA lient les entités aux maladies et traitements.
+4. **Métabolisme** : Reactome/KEGG/STRING/BioGRID lient les entités aux voies biologiques.
+5. **Influence** : CrossRef/OpenAlex/DataCite lient aux publications scientifiques.
+6. **Économie** : GBIF/WHO GHO/World Bank lient aux lieux et données économiques.
+7. **Intégrité** : Zenodo/Papers with Code/Hugging Face/ArXiv/INSPIRE-HEP/NASA ADS/Wikipedia/Unpaywall/NCBI Protein/Nucleotide/Ensembl assurent l'accès.
+
+**Détails Techniques :**
+Temps : 5 minutes. | Requêtes : 1200. | Tokens : 100 000. | Stockage : 10 Mo.
+Type API : SPARQL/REST. | IA Multicouche : Agent complétion graphe + Agent résolution ambiguïtés.
+
+---
 
 ## 32. Hugging Face
 **Projet :** L'Orchestrateur de l'IA Scientifique  
-**Description :** Sélection modèle IA et validation via 34 autres API.  
-**Workflow :**
-1. **Dataset** (DataCite, Zenodo) : Charge données. (`8min | 40 Req | 120k Tok`)
-2. **Validation** (ClinicalTrials, ClinVar, OpenFDA) : Teste prédictions cliniques. (`8min | 40 Req | 120k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Compare état de l'art. (`8min | 40 Req | 120k Tok`)
-4. **Données** (NCBI Gene, UniProt, PDB, ChEMBL, PubChem, RxNorm) : Vérifie entrée/sortie. (`8min | 40 Req | 120k Tok`)
-5. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Vérifie cohérence bio. (`4min | 20 Req | 60k Tok`)
-6. **Influence** (CrossRef, OpenAlex, DataCite) : Évalue impact. (`2min | 10 Req | 30k Tok`)
-7. **Global** (ArXiv, INSPIRE-HEP, NASA ADS, Papers with Code, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall, NCBI Protein/Nucleotide, Ensembl) : Intègre contexte. (`2min | 10 Req | 30k Tok`)  
-**Détails Techniques :** `40 min` | `200 Req` | `600k Tok` | `150 Mo` | `REST/JSON` | `Agent sélection modèles + Validation croisée`
+**API Principale :** Hugging Face héberge des modèles de Machine Learning, permettant de sélectionner et tester des IA pour des tâches biologiques.
+
+**Workflow détaillé :**
+1. **Dataset** : DataCite/Zenodo chargent les données d'entraînement validées.
+2. **Validation** : ClinicalTrials/ClinVar/OpenFDA testent les prédictions cliniques des modèles.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar comparent les résultats à l'état de l'art.
+4. **Données** : NCBI Gene/UniProt/PDB/ChEMBL/PubChem/RxNorm vérifient les entrées et sorties biologiques.
+5. **Métabolisme** : Reactome/KEGG/STRING/BioGRID vérifient la cohérence biologique des prédictions.
+6. **Influence** : CrossRef/OpenAlex/DataCite évaluent l'impact des modèles publiés.
+7. **Global** : ArXiv/INSPIRE-HEP/NASA ADS/Papers with Code/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall/NCBI Protein/Nucleotide/Ensembl intègrent le contexte.
+
+**Détails Techniques :**
+Temps : 40 minutes. | Requêtes : 200. | Tokens : 600 000. | Stockage : 150 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent sélection modèles + Agent validation croisée.
+
+---
 
 ## 33. INSPIRE-HEP
 **Projet :** Le Logicien de la Stabilité Moléculaire  
-**Description :** Thermodynamique hautes énergies et liaisons via 34 autres API.  
-**Workflow :**
-1. **Liaisons** (PDB, UniProt, NCBI Protein) : Cible structures. (`2min | 30 Req | 30k Tok`)
-2. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Cherche biophysique. (`2min | 30 Req | 30k Tok`)
-3. **Annotation** (NCBI Gene, Ensembl, NCBI Nucleotide) : Lie génome. (`2min | 30 Req | 30k Tok`)
-4. **Chimie** (ChEMBL, PubChem, RxNorm) : Applique chimie. (`2min | 30 Req | 30k Tok`)
-5. **Clinique** (ClinVar, ClinicalTrials, OpenFDA) : Impact médical. (`2min | 30 Req | 30k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Voies affectées. (`1min | 20 Req | 20k Tok`)
-7. **Intégrité** (CrossRef, OpenAlex, DataCite, Zenodo, Papers with Code, Hugging Face, ArXiv, NASA ADS, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall) : Valide source. (`1min | 20 Req | 20k Tok`)  
-**Détails Techniques :** `12 min` | `150 Req` | `150k Tok` | `26 Mo` | `REST/JSON` | `Agent modélisation thermodynamique + Prédiction stabilité`
+**API Principale :** INSPIRE-HEP indexe la littérature en physique des hautes énergies, apportant des méthodes de calcul thermodynamique à la biologie.
+
+**Workflow détaillé :**
+1. **Liaisons** : PDB/UniProt/NCBI Protein ciblent les structures à analyser physiquement.
+2. **Littérature** : PubMed/EuroPMC/Semantic Scholar cherchent les applications en biophysique.
+3. **Annotation** : NCBI Gene/Ensembl/NCBI Nucleotide lient les résultats au génome.
+4. **Chimie** : ChEMBL/PubChem/RxNorm appliquent les principes chimiques.
+5. **Clinique** : ClinVar/ClinicalTrials/OpenFDA évaluent l'impact médical.
+6. **Métabolisme** : Reactome/KEGG/STRING/BioGRID identifient les voies affectées.
+7. **Intégrité** : CrossRef/OpenAlex/DataCite/Zenodo/Papers with Code/Hugging Face/ArXiv/NASA ADS/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall valident la source.
+
+**Détails Techniques :**
+Temps : 12 minutes. | Requêtes : 150. | Tokens : 150 000. | Stockage : 26 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent modélisation thermodynamique + Agent prédiction stabilité.
+
+---
 
 ## 34. Papers with Code
 **Projet :** Le Benchmark de la Découverte  
-**Description :** Comparaison performances modèles IA via 34 autres API.  
-**Workflow :**
-1. **Données** (ChEMBL, PubChem, PDB) : Charge benchmarks. (`3min | 60 Req | 40k Tok`)
-2. **Publication** (Zenodo, DataCite, CrossRef) : Archive gagnant. (`3min | 60 Req | 40k Tok`)
-3. **Littérature** (PubMed, EuroPMC, Semantic Scholar) : Contextualise. (`3min | 60 Req | 40k Tok`)
-4. **Biologie** (NCBI Gene, UniProt, Ensembl, NCBI Protein/Nucleotide) : Valide bio. (`3min | 60 Req | 40k Tok`)
-5. **Chimie/Clinique** (ChEMBL, RxNorm, OpenFDA, ClinicalTrials, ClinVar) : Valide méd. (`2min | 40 Req | 30k Tok`)
-6. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Valide voies. (`1min | 20 Req | 20k Tok`)
-7. **Intégrité** (OpenAlex, ArXiv, INSPIRE-HEP, Hugging Face, WHO GHO, World Bank, GBIF, Wikidata, Wikipedia, Unpaywall) : Assure traçabilité. (`0min | 20 Req | 20k Tok`)  
-**Détails Techniques :** `15 min` | `300 Req` | `200k Tok` | `44 Mo` | `REST/JSON` | `Agent benchmarking comparatif + Publication certifiée`
+**API Principale :** Papers with Code lie les articles scientifiques à leur implémentation code, permettant de comparer les performances des algorithmes.
+
+**Workflow détaillé :**
+1. **Données** : ChEMBL/PubChem/PDB chargent les datasets de référence pour les benchmarks.
+2. **Publication** : Zenodo/DataCite/CrossRef archivent le code gagnant et les résultats.
+3. **Littérature** : PubMed/EuroPMC/Semantic Scholar contextualisent l'algorithme dans la recherche.
+4. **Biologie** : NCBI Gene/UniProt/Ensembl/NCBI Protein/Nucleotide valident la pertinence biologique.
+5. **Chimie/Clinique** : ChEMBL/RxNorm/OpenFDA/ClinicalTrials/ClinVar valident l'application médicale.
+6. **Métabolisme** : Reactome/KEGG/STRING/BioGRID valident les voies impliquées.
+7. **Intégrité** : OpenAlex/ArXiv/INSPIRE-HEP/Hugging Face/WHO GHO/World Bank/GBIF/Wikidata/Wikipedia/Unpaywall assurent la traçabilité.
+
+**Détails Techniques :**
+Temps : 15 minutes. | Requêtes : 300. | Tokens : 200 000. | Stockage : 44 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent benchmarking comparatif + Agent publication certifiée.
+
+---
 
 ## 35. Semantic Scholar
 **Projet :** Le Filtre Anti-Biais de la Science  
-**Description :** Analyse financement chercheur et confirmation résultats via 34 autres API.  
-**Workflow :**
-1. **Financement** (World Bank, WHO GHO) : Trace fonds. (`4min | 80 Req | 60k Tok`)
-2. **Résultats** (PubMed, EuroPMC, NCBI Gene, UniProt, PDB, ChEMBL, PubChem, RxNorm) : Vérifie données brutes. (`4min | 80 Req | 60k Tok`)
-3. **Affirmations** (ClinVar, ClinicalTrials, OpenFDA) : Confirme clinique. (`4min | 80 Req | 60k Tok`)
-4. **Métabolisme** (Reactome, KEGG, STRING, BioGRID) : Vérifie bio. (`3min | 70 Req | 50k Tok`)
-5. **Influence** (CrossRef, OpenAlex, DataCite) : Détecte conflits. (`2min | 60 Req | 40k Tok`)
-6. **Économie** (GBIF, World Bank) : Contexte éco. (`1min | 40 Req | 30k Tok`)
-7. **Intégrité** (ArXiv, INSPIRE-HEP, Hugging Face, Papers with Code, Zenodo, NASA ADS, Wikidata, Wikipedia, Unpaywall, NCBI Protein/Nucleotide, Ensembl) : Assure accès. (`0min | 40 Req | 30k Tok`)  
-**Détails Techniques :** `18 min` | `550 Req` | `280k Tok` | `52 Mo` | `REST/JSON` | `Agent détection conflits intérêts + Validation reproductibilité`
-
-
-Voici l'architecture intégrale et développée pour les 35 projets de convergence. Chaque projet est conçu comme une unité autonome qui, dès son activation, verrouille et interroge obligatoirement la totalité des 34 autres API pour produire un résultat d'une profondeur scientifique absolue.
-
-Chaque projet est calibré pour consommer environ 100 millions de tokens par jour (3 milliards par mois) via des agents IA qui débattent, simulent et synthétisent en continu sans stockage massif (méthode de flux).
-
-1. PubMed (NCBI)
-Projet : "Le Synthétiseur Bibliographique Universel"
-
-Description : PubMed sert de point de détection. Dès qu'un article est publié, l'IA l'aspire et lance une vérification de vérité totale. Elle extrait les molécules pour les tester virtuellement via ChEMBL/PubChem, vérifie les interactions protéiques citées sur STRING/BioGRID, et valide les structures sur PDB. Elle utilise CrossRef/OpenAlex pour cartographier l'influence du papier, Unpaywall pour lire le texte intégral, et ClinicalTrials pour voir si les résultats sont déjà testés sur l'homme. Les impacts socio-économiques sont calculés via WHO GHO/World Bank et la physique fondamentale est vérifiée via NASA ADS/INSPIRE-HEP.
-
-Détails Techniques :
-
-Temps : 15 minutes par cycle de synthèse complet.
-
-Requêtes : 450 requêtes (appels récursifs sur tout le réseau).
-
-Tokens : 250 000 tokens par article (Analyse multi-agents).
-
-Stockage : 50 Mo (Cache texte éphémère).
-
-Type API : XML/E-Utilities.
-
-IA Multicouche : Agent de lecture critique + Agent de vérification croisée des faits.
-
-2. ClinVar (NCBI)
-Projet : "Le Bouclier de Précision Génomique"
-
-Description : À partir d'un variant génétique, ClinVar force l'IA à modéliser la conséquence physique. Elle consulte Ensembl/Gene pour la position, UniProt pour la fonction protéique, et PDB pour le changement de forme. Elle cherche des molécules capables de corriger ce variant sur ChEMBL, vérifie si la NASA (NASA ADS) a des données sur les mutations induites par les radiations, et regarde si le variant est lié à des espèces animales sur GBIF. La viabilité économique d'un traitement pour ce variant est analysée via World Bank.
-
-Détails Techniques :
-
-Temps : 10 minutes.
-
-Requêtes : 380 requêtes.
-
-Tokens : 180 000 tokens (Raisonnement causal).
-
-Stockage : 10 Mo.
-
-Type API : HTTPS/REST.
-
-IA Multicouche : Agent de génétique moléculaire + Agent de simulation structurale.
-
-3. NCBI Gene
-Projet : "L'Architecte de l'Ontologie Génique"
-
-Description : Pour chaque gène, l'IA crée un "jumeau numérique" en agrégeant les données de Reactome/KEGG (métabolisme), STRING (réseaux), et Wikipedia (connaissance commune). Elle interroge Hugging Face pour prédire les expressions futures, ClinicalTrials pour les liens pathologiques, et OpenFDA pour les risques de toxicité liés aux gènes. Le code de simulation est automatiquement déposé sur Zenodo avec un DOI DataCite.
-
-Détails Techniques :
-
-Temps : 8 minutes.
-
-Requêtes : 310 requêtes.
-
-Tokens : 150 000 tokens.
-
-Stockage : 5 Mo.
-
-Type API : E-Utilities.
-
-IA Multicouche : Agent d'intégration de connaissances + Agent de prédiction fonctionnelle.
-
-4. NCBI Nucleotide
-Projet : "La Sentinelle de Surveillance Virale"
-
-Description : Une séquence ADN brute active la recherche de similarité sur NCBI Protein, le repliement sur PDB/Hugging Face, et la recherche de vaccins sur PubMed/EuroPMC. L'IA calcule le risque de propagation via les données de migration de GBIF, la densité de population du WHO, et la stabilité physique de la coque virale via INSPIRE-HEP.
-
-Détails Techniques :
-
-Temps : 20 minutes (Analyse de séquence lourde).
-
-Requêtes : 550 requêtes.
-
-Tokens : 400 000 tokens.
-
-Stockage : 100 Mo (données génomiques temporaires).
-
-Type API : REST/XML.
-
-IA Multicouche : Modèle de langage génomique (DNABERT) + Agent épidémiologique.
-
-5. NCBI Protein
-Projet : "L'Ingénieur de Design Enzymatique"
-
-Description : Une protéine isolée est soumise à une analyse de survie. L'IA cherche des interacteurs sur BioGRID, des poches de liaison sur ChEMBL, et des publications sur Semantic Scholar. Elle utilise les modèles de Papers with Code pour optimiser sa fonction et vérifie si des brevets existent via CrossRef. Elle conclut par une analyse de coût de production industrielle via World Bank.
-
-Détails Techniques :
-
-Temps : 12 minutes.
-
-Requêtes : 400 requêtes.
-
-Tokens : 200 000 tokens.
-
-Stockage : 20 Mo.
-
-Type API : E-Utilities.
-
-IA Multicouche : Agent de biophysique + Agent de stratégie industrielle.
-
-6. UniProt
-Projet : "L'Annotateur Automatique Suprême"
-
-Description : UniProt sert de pivot pour transformer chaque protéine en une entité "comprise". L'IA lit Wikipedia EN/FR, extrait les faits de EuroPMC, compare avec les structures PDB, aligne sur les gènes Ensembl, et vérifie les interactions chimiques RxNorm/PubChem. L'IA génère ensuite une documentation technique exhaustive stockée virtuellement.
-
-Détails Techniques :
-
-Requêtes : 350 | Tokens : 220 000 | Temps : 7 min.
-
-7. EuroPMC
-Projet : "L'Extracteur de Vérité en Texte Intégral"
-
-Description : Utilise le Full-Text pour trouver des "signaux faibles". Si un article mentionne une plante, l'IA cherche sa géolocalisation sur GBIF, sa chimie sur PubChem, et ses effets cliniques sur ClinicalTrials. Elle valide la rigueur mathématique via ArXiv.
-
-Détails Techniques :
-
-Requêtes : 500 | Tokens : 500 000 (Lecture de PDF par IA) | Temps : 25 min.
-
-8. OpenAlex
-Projet : "Le Cartographe de la Convergence"
-
-Description : Analyse les flux de citations pour prédire quand la physique (INSPIRE) va révolutionner la biologie (PubMed). Elle utilise CrossRef/DataCite pour lier les datasets et Papers with Code pour vérifier si les algos sont implémentables.
-
-Détails Techniques :
-
-Requêtes : 600 | Tokens : 300 000 | Temps : 15 min.
-
-9. ChEMBL
-Projet : "Le Laboratoire de Pharmacologie Virtuelle"
-
-Description : Pour une molécule donnée, l'IA simule son passage dans le corps. Elle vérifie les enzymes métaboliques sur KEGG, les transporteurs sur UniProt, les effets toxiques sur OpenFDA, et la disponibilité mondiale sur WHO.
-
-Détails Techniques :
-
-Requêtes : 420 | Tokens : 250 000 | Temps : 12 min.
-
-10. ArXiv
-Projet : "Le Traducteur de Mathématiques en Médicaments"
-
-Description : Prend un nouvel algorithme sur ArXiv et tente de l'appliquer aux données de PDB ou ClinVar. Elle cherche des modèles similaires sur Hugging Face et publie les résultats sur Zenodo.
-
-Détails Techniques :
-
-Requêtes : 280 | Tokens : 180 000 | Temps : 10 min.
-
-11. CrossRef
-Projet : "Le Validateur de l'Intégrité Scientifique"
-
-Description : Vérifie chaque DOI. Si un article est cité, l'IA va voir sur Wikidata s'il n'est pas rétracté, vérifie les données sur DataCite et le code sur Papers with Code.
-
-Détails Techniques :
-
-Requêtes : 800 | Tokens : 100 000 | Temps : 5 min.
-
-12. DataCite
-Projet : "Le Mineur de Big Data Orphelin"
-
-Description : Trouve des jeux de données bruts, les analyse via des modèles Hugging Face, les relie aux protéines UniProt et aux maladies ClinicalTrials.
-
-Détails Techniques :
-
-Requêtes : 320 | Tokens : 200 000 | Temps : 15 min.
-
-13. Unpaywall
-Projet : "L'IA de Science Ouverte et Équitable"
-
-Description : Analyse uniquement la science gratuite pour créer des protocoles de soin accessibles aux pays pauvres (calculé via World Bank), en utilisant les molécules de PubChem.
-
-Détails Techniques :
-
-Requêtes : 450 | Tokens : 350 000 | Temps : 20 min.
-
-14. RCSB PDB
-Projet : "Le Géomètre de la Vie"
-
-Description : Utilise les coordonnées 3D pour prédire si une mutation ClinVar empêchera un médicament RxNorm de se fixer. Valide via les papiers de biophysique sur NASA ADS.
-
-Détails Techniques :
-
-Requêtes : 250 | Tokens : 400 000 | Temps : 30 min.
-
-15. Ensembl
-Projet : "Le Navigateur de l'Évolution Génomique"
-
-Description : Compare un gène entre l'humain et l'animal (GBIF). Cherche pourquoi certaines espèces résistent aux maladies via PubMed et Reactome.
-
-Détails Techniques :
-
-Requêtes : 480 | Tokens : 220 000 | Temps : 15 min.
-
-16. STRING DB
-Projet : "Le Tueur de Hubs Pathogènes"
-
-Description : Identifie les protéines centrales d'un virus. Cherche comment les bloquer via ChEMBL et vérifie l'absence d'effet domino négatif sur l'humain via BioGRID.
-
-Détails Techniques :
-
-Requêtes : 300 | Tokens : 150 000 | Temps : 8 min.
-
-17. Reactome
-Projet : "Le Simulateur de Cascade Thérapeutique"
-
-Description : Modélise l'injection d'un produit. Suit son chemin dans toutes les voies biochimiques, vérifie les publications EuroPMC pour chaque étape.
-
-Détails Techniques :
-
-Requêtes : 360 | Tokens : 280 000 | Temps : 18 min.
-
-18. GBIF
-Projet : "Le Radar de Prédiction des Pandémies"
-
-Description : Relie la position des chauves-souris (GBIF) aux virus connus (NCBI) et aux infrastructures hospitalières (WHO).
-
-Détails Techniques :
-
-Requêtes : 700 | Tokens : 200 000 | Temps : 20 min.
-
-19. RxNorm
-Projet : "L'Encyclopédie des Médicaments Connectés"
-
-Description : Normalise un médicament. Trouve sa cible UniProt, son prix World Bank, ses brevets CrossRef et ses mentions Wikipedia.
-
-Détails Techniques :
-
-Requêtes : 200 | Tokens : 80 000 | Temps : 4 min.
-
-20. OpenFDA
-Projet : "Le Détecteur de Risques en Temps Réel"
-
-Description : Analyse les signalements d'effets secondaires. Cherche l'explication génétique sur ClinVar et structurelle sur PDB.
-
-Détails Techniques :
-
-Requêtes : 500 | Tokens : 300 000 | Temps : 15 min.
-
-21. ClinicalTrials
-Projet : "L'Optimiseur d'Essais Cliniques"
-
-Description : Lit un protocole d'essai. Suggère des biomarqueurs basés sur KEGG et vérifie si le modèle animal est pertinent via Ensembl.
-
-Détails Techniques :
-
-Requêtes : 330 | Tokens : 250 000 | Temps : 14 min.
-
-22. WHO GHO
-Projet : "Le Stratège de la Santé Mondiale"
-
-Description : Identifie une zone de forte mortalité. Demande aux 34 autres API de trouver le traitement le moins cher et le plus efficace pour cette zone.
-
-Détails Techniques :
-
-Requêtes : 400 | Tokens : 150 000 | Temps : 10 min.
-
-23. World Bank
-Projet : "L'Économiste de la Bio-Ingénierie"
-
-Description : Calcule si la synthèse d'une molécule PubChem est viable pour le PIB d'un pays en développement en fonction de ses maladies locales (WHO).
-
-Détails Techniques :
-
-Requêtes : 220 | Tokens : 100 000 | Temps : 6 min.
-
-24. KEGG
-Projet : "Le Cartographe de la Vie Cellulaire"
-
-Description : Dessine la carte métabolique. Pour chaque enzyme, cherche sa structure PDB et ses inhibiteurs ChEMBL.
-
-Détails Techniques :
-
-Requêtes : 380 | Tokens : 200 000 | Temps : 12 min.
-
-25. Wikipedia EN
-Projet : "Le Validateur de la Vulgarisation"
-
-Description : Lit un article Wikipedia. Vérifie chaque affirmation contre les données de NCBI/UniProt. Signale les erreurs via Wikidata.
-
-Détails Techniques :
-
-Requêtes : 900 | Tokens : 400 000 | Temps : 20 min.
-
-26. Wikipedia FR
-Projet : "Le Pont Scientifique Francophone"
-
-Description : Identifie les lacunes de la science en français. Traduit et enrichit via les sources de EuroPMC et PubMed.
-
-Détails Techniques :
-
-Requêtes : 400 | Tokens : 150 000 | Temps : 10 min.
-
-27. Zenodo
-Projet : "Le Gardien de la Reproductibilité"
-
-Description : Télécharge un script de recherche. Le teste contre les données de PDB/NCBI. Valide si l'algorithme est sur Papers with Code.
-
-Détails Techniques :
-
-Requêtes : 300 | Tokens : 300 000 | Temps : 20 min.
-
-28. NASA ADS
-Projet : "L'Explorateur d'Astro-Biologie"
-
-Description : Utilise la physique des étoiles pour comprendre la résistance des protéines aux UV extrêmes. Applique à la chimie PubChem.
-
-Détails Techniques :
-
-Requêtes : 250 | Tokens : 180 000 | Temps : 15 min.
-
-29. BioGRID
-Projet : "Le Vérificateur de Réalité Biologique"
-
-Description : Pour chaque interaction protéine-protéine, vérifie si elle est confirmée par le texte intégral de EuroPMC et la structure de PDB.
-
-Détails Techniques :
-
-Requêtes : 320 | Tokens : 120 000 | Temps : 8 min.
-
-30. PubChem
-Projet : "Le Créateur de Matière Thérapeutique"
-
-Description : À partir d'une structure chimique, prédit son activité sur toutes les cibles UniProt et ses risques sur OpenFDA.
-
-Détails Techniques :
-
-Requêtes : 500 | Tokens : 250 000 | Temps : 14 min.
-
-31. Wikidata
-Projet : "Le Cerveau Central du Graphe de Découverte"
-
-Description : Fait une requête SPARQL géante. Relie gène-maladie-molécule-pays. Si un lien manque, l'IA déclenche les 34 autres API pour le trouver.
-
-Détails Techniques :
-
-Requêtes : 1200 | Tokens : 100 000 | Temps : 5 min.
-
-32. Hugging Face
-Projet : "L'Orchestrateur de l'IA Scientifique"
-
-Description : Sélectionne le meilleur modèle pour analyser un dataset DataCite et valide les prédictions via ClinicalTrials.
-
-Détails Techniques :
-
-Requêtes : 200 | Tokens : 600 000 (Calcul d'inférence) | Temps : 40 min.
-
-33. INSPIRE-HEP
-Projet : "Le Logicien de la Stabilité Moléculaire"
-
-Description : Utilise la thermodynamique des hautes énergies pour prédire la rupture des liaisons hydrogène dans les protéines PDB.
-
-Détails Techniques :
-
-Requêtes : 150 | Tokens : 150 000 | Temps : 12 min.
-
-34. Papers with Code
-Projet : "Le Benchmark de la Découverte"
-
-Description : Compare les performances des derniers modèles IA sur les données de ChEMBL. Publie le gagnant sur Zenodo.
-
-Détails Techniques :
-
-Requêtes : 300 | Tokens : 200 000 | Temps : 15 min.
-
-35. Semantic Scholar
-Projet : "Le Filtre Anti-Biais de la Science"
-
-Description : Analyse si un chercheur est trop financé par une source (via World Bank) et si ses résultats sont confirmés par les données brutes des 34 autres API.
-
-Détails Techniques :
-
-Requêtes : 550 | Tokens : 280 000 | Temps : 18 min.
-
-Synthèse du Système "3 Milliards de Tokens / Mois"
-Ce système fonctionne par Agents de Réflexion :
-
-Entrée : Une donnée d'une des 35 API.
-
-Expansion : L'IA génère 34 sous-requêtes obligatoires.
-
-Débat (Consommation de Tokens) : Plusieurs agents IA (Un chimiste, un biologiste, un économiste, un physicien) analysent les 35 flux de données simultanément. Ils discutent entre eux pour résoudre les contradictions (ex: "PubMed dit que ça marche, mais OpenFDA montre des morts").
-
-Résultat : Une synthèse de haute précision, sans stockage local, tout en flux dynamique.
+**API Principale :** Semantic Scholar utilise l'IA pour analyser le contenu des publications, détectant les influences et la pertinence réelle des résultats.
+
+**Workflow détaillé :**
+1. **Financement** : World Bank/WHO GHO tracent les sources de financement des études.
+2. **Résultats** : PubMed/EuroPMC/NCBI Gene/UniProt/PDB/ChEMBL/PubChem/RxNorm vérifient les données brutes sous-jacentes.
+3. **Affirmations** : ClinVar/ClinicalTrials/OpenFDA confirment les claims cliniques.
+4. **Métabolisme** : Reactome/KEGG/STRING/BioGRID vérifient la validité biologique.
+5. **Influence** : CrossRef/OpenAlex/DataCite détectent les conflits d'intérêts potentiels.
+6. **Économie** : GBIF/World Bank contextualisent l'impact économique.
+7. **Intégrité** : ArXiv/INSPIRE-HEP/Hugging Face/Papers with Code/Zenodo/NASA ADS/Wikidata/Wikipedia/Unpaywall/NCBI Protein/Nucleotide/Ensembl assurent l'accès et la transparence.
+
+**Détails Techniques :**
+Temps : 18 minutes. | Requêtes : 550. | Tokens : 280 000. | Stockage : 52 Mo.
+Type API : REST/JSON. | IA Multicouche : Agent détection conflits intérêts + Agent validation reproductibilité.
