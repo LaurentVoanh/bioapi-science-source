@@ -3,9 +3,10 @@ to install add you api key mistral in config.php , you can use 3 differents api 
 Try V2 for better result
 
 ## Installation
-1. Uploadez install.php sur votre serveur PHP 8.3+
-2. Visitez https://votre-domaine.fr/install.php
-3. Le script genere automatiquement les fichiers
+1. Uploadez les fichiers sur votre serveur PHP 8.3+ (je conseille la V2)
+2. Configurez 1 à 3 API KEY MISTRAL dans config.php
+3. Visitez https://votre-domaine.fr/index.php
+4. Le script genere automatiquement les fichiers
 
 ## Utilisation
 1. Cliquez sur "Lancer une recherche"
