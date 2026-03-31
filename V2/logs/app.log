@@ -1,0 +1,221 @@
+[2026-03-31 08:10:36][PICK_TOPIC] Pick topic, question: ''
+[2026-03-31 08:10:36][PICK_TOPIC] Topic: AI-driven protein folding dynamics in neurodegeneration | Session: sess_1521e9786fd737ee | Mode: auto
+[2026-03-31 08:10:37][PREPARE] Preparing queries for: AI-driven protein folding dynamics in neurodegeneration
+[2026-03-31 08:10:44][PREPARE] 36 queries prepared for: AI-driven protein folding dynamics in neurodegeneration
+[2026-03-31 08:10:45][EXEC] [PubMed] HTTP 200 430ms hits=0
+[2026-03-31 08:10:45][EXEC] [EuropePMC] HTTP 200 104ms hits=0
+[2026-03-31 08:10:46][EXEC] [OpenAlex] HTTP 200 989ms hits=8
+[2026-03-31 08:10:48][EXEC] [CrossRef] HTTP 200 1154ms hits=6
+[2026-03-31 08:10:48][EXEC] [arXiv] HTTP 200 411ms hits=0
+[2026-03-31 08:10:50][EXEC] [Zenodo] HTTP 200 776ms hits=6
+[2026-03-31 08:10:50][EXEC] [INSPIRE-HEP] HTTP 200 103ms hits=0
+[2026-03-31 08:10:53][EXEC] [DataCite] HTTP 200 2940ms hits=0
+[2026-03-31 08:10:54][EXEC] [UniProt] HTTP 200 211ms hits=5
+[2026-03-31 08:10:54][EXEC] [Ensembl] HTTP 200 140ms hits=1
+[2026-03-31 08:10:55][EXEC] [ClinVar] HTTP 200 346ms hits=6
+[2026-03-31 08:10:55][EXEC] [GEO] HTTP 200 361ms hits=1
+[2026-03-31 08:10:56][EXEC] [ArrayExpress] HTTP 200 501ms hits=0
+[2026-03-31 08:10:57][EXEC] [ChEMBL] HTTP 200 211ms hits=1
+[2026-03-31 08:10:57][EXEC] [PubChem] HTTP 404 399ms hits=0
+[2026-03-31 08:10:59][EXEC] [KEGG] HTTP 200 1492ms hits=0
+[2026-03-31 08:11:00][EXEC] [StringDB] HTTP 200 168ms hits=4
+[2026-03-31 08:11:00][EXEC] [Reactome] HTTP 404 376ms hits=0
+[2026-03-31 08:11:01][EXEC] [GeneOntology] HTTP 200 699ms hits=5
+[2026-03-31 08:11:02][EXEC] [DisGeNET] HTTP 200 196ms hits=0
+[2026-03-31 08:11:02][EXEC] [ClinicalTrials] HTTP 200 122ms hits=5
+[2026-03-31 08:11:11][EXEC] [OpenFDA] HTTP 200 8268ms hits=5
+[2026-03-31 08:11:11][EXEC] [Wikidata] HTTP 200 211ms hits=0
+[2026-03-31 08:11:12][EXEC] [Wikipedia] HTTP 200 396ms hits=3
+[2026-03-31 08:11:12][EXEC] [HuggingFace] HTTP 200 159ms hits=0
+[2026-03-31 08:11:13][EXEC] [PapersWithCode] HTTP 200 290ms hits=0
+[2026-03-31 08:11:14][EXEC] [PDB] HTTP 400 391ms hits=0
+[2026-03-31 08:11:14][EXEC] [GBIF] HTTP 200 178ms hits=5
+[2026-03-31 08:11:15][EXEC] [WHOGHO] HTTP 200 219ms hits=0
+[2026-03-31 08:11:16][EXEC] [RxNorm] HTTP 200 734ms hits=1
+[2026-03-31 08:11:17][EXEC] [BioGRID] HTTP 200 991ms hits=3
+[2026-03-31 08:11:18][EXEC] [NCBI_Gene] HTTP 200 339ms hits=1
+[2026-03-31 08:11:18][EXEC] [NCBI_Protein] HTTP 200 420ms hits=3
+[2026-03-31 08:11:19][EXEC] [WorldBank] HTTP 200 719ms hits=5
+[2026-03-31 08:11:20][EXEC] [NASA_ADS] HTTP 404 424ms hits=0
+[2026-03-31 08:11:21][EXEC] [SemanticScholar] HTTP 429 216ms hits=0
+[2026-03-31 08:11:21][WRITE] Writing article for: AI-driven protein folding dynamics in neurodegeneration
+[2026-03-31 08:17:25][PICK_TOPIC] Pick topic, question: 'maladie de charcot'
+[2026-03-31 08:17:25][PICK_TOPIC] Topic: maladie de charcot | Session: sess_cf63eadd7b3b5472 | Mode: question
+[2026-03-31 08:17:25][PREPARE] Preparing queries for: maladie de charcot
+[2026-03-31 08:17:34][PREPARE] 36 queries prepared for: maladie de charcot
+[2026-03-31 08:17:35][EXEC] [PubMed] HTTP 200 559ms hits=8
+[2026-03-31 08:17:35][EXEC] [EuropePMC] HTTP 200 118ms hits=0
+[2026-03-31 08:17:37][EXEC] [OpenAlex] HTTP 200 1302ms hits=8
+[2026-03-31 08:17:38][EXEC] [CrossRef] HTTP 200 930ms hits=6
+[2026-03-31 08:17:39][EXEC] [arXiv] HTTP 200 346ms hits=0
+[2026-03-31 08:17:40][EXEC] [Zenodo] HTTP 200 580ms hits=6
+[2026-03-31 08:17:40][EXEC] [INSPIRE-HEP] HTTP 200 119ms hits=1
+[2026-03-31 08:17:42][EXEC] [DataCite] HTTP 200 1366ms hits=0
+[2026-03-31 08:17:42][EXEC] [UniProt] HTTP 200 231ms hits=5
+[2026-03-31 08:17:43][EXEC] [Ensembl] HTTP 200 132ms hits=1
+[2026-03-31 08:17:43][EXEC] [ClinVar] HTTP 200 367ms hits=6
+[2026-03-31 08:17:44][EXEC] [GEO] HTTP 200 345ms hits=5
+[2026-03-31 08:17:46][EXEC] [ArrayExpress] HTTP 200 1039ms hits=0
+[2026-03-31 08:17:47][EXEC] [ChEMBL] HTTP 200 175ms hits=3
+[2026-03-31 08:17:48][EXEC] [PubChem] HTTP 200 472ms hits=1
+[2026-03-31 08:17:50][EXEC] [KEGG] HTTP 200 1488ms hits=1
+[2026-03-31 08:17:51][EXEC] [StringDB] HTTP 200 165ms hits=3
+[2026-03-31 08:17:52][EXEC] [Reactome] HTTP 404 371ms hits=0
+[2026-03-31 08:17:53][EXEC] [GeneOntology] HTTP 200 667ms hits=0
+[2026-03-31 08:17:55][EXEC] [DisGeNET] HTTP 200 217ms hits=0
+[2026-03-31 08:17:56][EXEC] [ClinicalTrials] HTTP 200 117ms hits=5
+[2026-03-31 08:17:59][EXEC] [OpenFDA] HTTP 200 2252ms hits=5
+[2026-03-31 08:18:00][EXEC] [Wikidata] HTTP 200 274ms hits=5
+[2026-03-31 08:18:01][EXEC] [Wikipedia] HTTP 200 336ms hits=3
+[2026-03-31 08:18:02][EXEC] [HuggingFace] HTTP 200 144ms hits=0
+[2026-03-31 08:18:03][EXEC] [PapersWithCode] HTTP 200 568ms hits=0
+[2026-03-31 08:18:04][EXEC] [PDB] HTTP 400 398ms hits=0
+[2026-03-31 08:18:05][EXEC] [GBIF] HTTP 200 174ms hits=5
+[2026-03-31 08:18:06][EXEC] [WHOGHO] HTTP 200 266ms hits=0
+[2026-03-31 08:18:08][EXEC] [RxNorm] HTTP 200 972ms hits=1
+[2026-03-31 08:18:10][EXEC] [BioGRID] HTTP 200 1217ms hits=3
+[2026-03-31 08:18:10][EXEC] [NCBI_Gene] HTTP 200 337ms hits=1
+[2026-03-31 08:18:11][EXEC] [NCBI_Protein] HTTP 200 365ms hits=5
+[2026-03-31 08:18:12][EXEC] [WorldBank] HTTP 200 235ms hits=5
+[2026-03-31 08:18:12][EXEC] [NASA_ADS] HTTP 404 420ms hits=0
+[2026-03-31 08:18:13][EXEC] [SemanticScholar] HTTP 429 478ms hits=0
+[2026-03-31 08:18:13][WRITE] Writing article for: maladie de charcot
+[2026-03-31 08:19:42][PICK_TOPIC] Pick topic, question: 'covid 19'
+[2026-03-31 08:19:42][PICK_TOPIC] Topic: covid 19 | Session: sess_3ac0682a89d2064c | Mode: question
+[2026-03-31 08:19:42][PREPARE] Preparing queries for: covid 19
+[2026-03-31 08:19:45][PREPARE] 34 queries prepared for: covid 19
+[2026-03-31 08:19:46][EXEC] [PubMed] HTTP 200 669ms hits=8
+[2026-03-31 08:19:46][EXEC] [EuropePMC] HTTP 200 98ms hits=0
+[2026-03-31 08:19:48][EXEC] [OpenAlex] HTTP 200 900ms hits=8
+[2026-03-31 08:19:49][EXEC] [CrossRef] HTTP 200 742ms hits=6
+[2026-03-31 08:19:49][EXEC] [arXiv] HTTP 200 283ms hits=6
+[2026-03-31 08:19:50][EXEC] [Zenodo] HTTP 200 839ms hits=6
+[2026-03-31 08:19:51][EXEC] [INSPIRE-HEP] HTTP 200 143ms hits=5
+[2026-03-31 08:19:54][EXEC] [DataCite] HTTP 200 2342ms hits=0
+[2026-03-31 08:19:54][EXEC] [Ensembl] HTTP 200 100ms hits=1
+[2026-03-31 08:19:55][EXEC] [ClinVar] HTTP 200 414ms hits=6
+[2026-03-31 08:19:55][EXEC] [GEO] HTTP 200 385ms hits=5
+[2026-03-31 08:19:56][EXEC] [ArrayExpress] HTTP 200 181ms hits=0
+[2026-03-31 08:19:56][EXEC] [ChEMBL] HTTP 200 291ms hits=1
+[2026-03-31 08:19:57][EXEC] [PubChem] HTTP 200 351ms hits=1
+[2026-03-31 08:19:59][EXEC] [KEGG] HTTP 200 1195ms hits=0
+[2026-03-31 08:19:59][EXEC] [StringDB] HTTP 200 282ms hits=3
+[2026-03-31 08:20:00][EXEC] [Reactome] HTTP 404 359ms hits=0
+[2026-03-31 08:20:00][EXEC] [GeneOntology] HTTP 200 488ms hits=5
+[2026-03-31 08:20:01][EXEC] [DisGeNET] HTTP 200 179ms hits=0
+[2026-03-31 08:20:01][EXEC] [ClinicalTrials] HTTP 200 123ms hits=5
+[2026-03-31 08:20:04][EXEC] [OpenFDA] HTTP 200 2261ms hits=5
+[2026-03-31 08:20:05][EXEC] [Wikidata] HTTP 200 414ms hits=5
+[2026-03-31 08:20:05][EXEC] [Wikipedia] HTTP 200 393ms hits=3
+[2026-03-31 08:20:06][EXEC] [HuggingFace] HTTP 200 113ms hits=1
+[2026-03-31 08:20:07][EXEC] [PapersWithCode] HTTP 200 554ms hits=0
+[2026-03-31 08:20:07][EXEC] [PDB] HTTP 400 338ms hits=0
+[2026-03-31 08:20:08][EXEC] [GBIF] HTTP 200 281ms hits=5
+[2026-03-31 08:20:08][EXEC] [WHOGHO] HTTP 200 168ms hits=2
+[2026-03-31 08:20:09][EXEC] [RxNorm] HTTP 200 645ms hits=1
+[2026-03-31 08:20:11][EXEC] [BioGRID] HTTP 200 944ms hits=3
+[2026-03-31 08:20:11][EXEC] [NCBI_Gene] HTTP 200 362ms hits=1
+[2026-03-31 08:20:12][EXEC] [NCBI_Protein] HTTP 200 355ms hits=5
+[2026-03-31 08:20:14][EXEC] [NASA_ADS] HTTP 404 1358ms hits=0
+[2026-03-31 08:20:14][EXEC] [SemanticScholar] HTTP 429 201ms hits=0
+[2026-03-31 08:20:14][WRITE] Writing article for: covid 19
+[2026-03-31 08:21:00][WRITE] Article #1 written: 1087 words, 24 sources
+[2026-03-31 08:23:19][DEEP] Deep research for article #1: covid 19
+[2026-03-31 08:23:25][EXEC] [PubMed] HTTP 200 541ms hits=8
+[2026-03-31 08:23:25][EXEC] [EuropePMC] HTTP 200 80ms hits=0
+[2026-03-31 08:23:27][EXEC] [OpenAlex] HTTP 200 2028ms hits=8
+[2026-03-31 08:23:28][EXEC] [UniProt] HTTP 200 126ms hits=0
+[2026-03-31 08:23:28][EXEC] [Ensembl] HTTP 400 165ms hits=0
+[2026-03-31 08:23:29][EXEC] [ClinVar] HTTP 200 415ms hits=1
+[2026-03-31 08:23:30][EXEC] [GEO] HTTP 200 348ms hits=5
+[2026-03-31 08:23:31][EXEC] [KEGG] HTTP 400 1613ms hits=0
+[2026-03-31 08:23:32][EXEC] [Reactome] HTTP 404 376ms hits=0
+[2026-03-31 08:23:33][EXEC] [GeneOntology] HTTP 200 691ms hits=0
+[2026-03-31 08:23:34][EXEC] [DisGeNET] HTTP 200 174ms hits=0
+[2026-03-31 08:23:34][EXEC] [ClinicalTrials] HTTP 200 125ms hits=5
+[2026-03-31 08:23:37][EXEC] [OpenFDA] HTTP 200 2829ms hits=3
+[2026-03-31 08:23:38][EXEC] [StringDB] HTTP 404 191ms hits=0
+[2026-03-31 08:23:39][EXEC] [ChEMBL] HTTP 200 1215ms hits=0
+[2026-03-31 08:23:40][EXEC] [PubChem] HTTP 404 382ms hits=0
+[2026-03-31 08:26:42][PICK_TOPIC] Pick topic, question: ''
+[2026-03-31 08:26:43][PICK_TOPIC] Topic: Long COVID neuroinflammatory biomarkers 2023 | Session: sess_064cc6548689f392 | Mode: auto
+[2026-03-31 08:26:43][PREPARE] Preparing queries for: Long COVID neuroinflammatory biomarkers 2023
+[2026-03-31 08:26:47][PREPARE] Mistral JSON parse failed, using generic term
+[2026-03-31 08:26:47][PREPARE] 37 queries prepared for: Long COVID neuroinflammatory biomarkers 2023
+[2026-03-31 08:26:48][EXEC] [PubMed] HTTP 200 431ms hits=0
+[2026-03-31 08:26:48][EXEC] [EuropePMC] HTTP 200 100ms hits=0
+[2026-03-31 08:26:51][EXEC] [OpenAlex] HTTP 200 2330ms hits=8
+[2026-03-31 08:26:53][EXEC] [CrossRef] HTTP 200 2096ms hits=6
+[2026-03-31 08:26:55][EXEC] [arXiv] HTTP 200 1162ms hits=0
+[2026-03-31 08:26:57][EXEC] [Zenodo] HTTP 200 2427ms hits=6
+[2026-03-31 08:26:58][EXEC] [INSPIRE-HEP] HTTP 200 122ms hits=0
+[2026-03-31 08:26:59][EXEC] [DataCite] HTTP 200 1559ms hits=0
+[2026-03-31 08:27:00][EXEC] [UniProt] HTTP 200 284ms hits=0
+[2026-03-31 08:27:00][EXEC] [Ensembl] HTTP 400 85ms hits=0
+[2026-03-31 08:27:01][EXEC] [ClinVar] HTTP 200 355ms hits=0
+[2026-03-31 08:27:02][EXEC] [GEO] HTTP 200 359ms hits=0
+[2026-03-31 08:27:02][EXEC] [ArrayExpress] HTTP 200 104ms hits=0
+[2026-03-31 08:27:03][EXEC] [ChEMBL] HTTP 200 1019ms hits=0
+[2026-03-31 08:27:04][EXEC] [PubChem] HTTP 404 471ms hits=0
+[2026-03-31 08:27:06][EXEC] [KEGG] HTTP 200 1189ms hits=0
+[2026-03-31 08:27:06][EXEC] [StringDB] HTTP 404 157ms hits=0
+[2026-03-31 08:27:12][EXEC] [Reactome] HTTP 0 4909ms hits=0
+[2026-03-31 08:27:13][EXEC] [GeneOntology] HTTP 200 654ms hits=0
+[2026-03-31 08:27:13][EXEC] [DisGeNET] HTTP 200 142ms hits=0
+[2026-03-31 08:27:13][EXEC] [ClinicalTrials] HTTP 200 118ms hits=0
+[2026-03-31 08:27:15][EXEC] [OpenFDA] HTTP 200 1655ms hits=5
+[2026-03-31 08:27:16][EXEC] [Wikidata] HTTP 200 186ms hits=0
+[2026-03-31 08:27:17][EXEC] [Wikipedia] HTTP 200 394ms hits=2
+[2026-03-31 08:27:17][EXEC] [HuggingFace] HTTP 200 117ms hits=0
+[2026-03-31 08:27:18][EXEC] [PapersWithCode] HTTP 200 620ms hits=0
+[2026-03-31 08:27:19][EXEC] [PDB] HTTP 400 359ms hits=0
+[2026-03-31 08:27:19][EXEC] [Unpaywall] HTTP 404 407ms hits=0
+[2026-03-31 08:27:20][EXEC] [GBIF] HTTP 200 235ms hits=5
+[2026-03-31 08:27:20][EXEC] [WHOGHO] HTTP 200 414ms hits=0
+[2026-03-31 08:27:21][EXEC] [RxNorm] HTTP 200 627ms hits=0
+[2026-03-31 08:27:23][EXEC] [BioGRID] HTTP 200 993ms hits=3
+[2026-03-31 08:27:23][EXEC] [NCBI_Gene] HTTP 200 373ms hits=0
+[2026-03-31 08:27:24][EXEC] [NCBI_Protein] HTTP 200 354ms hits=0
+[2026-03-31 08:27:24][EXEC] [WorldBank] HTTP 200 314ms hits=0
+[2026-03-31 08:27:25][EXEC] [NASA_ADS] HTTP 404 792ms hits=0
+[2026-03-31 08:27:26][EXEC] [SemanticScholar] HTTP 429 540ms hits=0
+[2026-03-31 08:27:27][WRITE] Writing article for: Long COVID neuroinflammatory biomarkers 2023
+[2026-03-31 08:28:25][WRITE] Article #2 written: 3486 words, 7 sources
+[2026-03-31 08:36:23][PICK_TOPIC] Pick topic, question: ''
+[2026-03-31 08:36:23][PICK_TOPIC] Topic: mRNA vaccine induced autoimmunity mechanisms 2024 | Session: sess_97fccd37c9973a1a | Mode: auto
+[2026-03-31 08:36:23][PREPARE] Preparing queries for: mRNA vaccine induced autoimmunity mechanisms 2024
+[2026-03-31 08:36:27][PREPARE] 32 queries prepared for: mRNA vaccine induced autoimmunity mechanisms 2024
+[2026-03-31 08:36:28][EXEC] [PubMed] HTTP 200 428ms hits=8
+[2026-03-31 08:36:28][EXEC] [EuropePMC] HTTP 200 121ms hits=0
+[2026-03-31 08:36:32][EXEC] [OpenAlex] HTTP 200 3779ms hits=8
+[2026-03-31 08:36:34][EXEC] [CrossRef] HTTP 200 1114ms hits=6
+[2026-03-31 08:36:34][EXEC] [arXiv] HTTP 200 253ms hits=0
+[2026-03-31 08:36:35][EXEC] [Zenodo] HTTP 200 751ms hits=6
+[2026-03-31 08:36:36][EXEC] [INSPIRE-HEP] HTTP 200 101ms hits=0
+[2026-03-31 08:36:39][EXEC] [DataCite] HTTP 200 2643ms hits=0
+[2026-03-31 08:36:39][EXEC] [UniProt] HTTP 200 189ms hits=5
+[2026-03-31 08:36:40][EXEC] [Ensembl] HTTP 200 118ms hits=1
+[2026-03-31 08:36:40][EXEC] [ClinVar] HTTP 200 342ms hits=0
+[2026-03-31 08:36:41][EXEC] [GEO] HTTP 200 387ms hits=0
+[2026-03-31 08:36:41][EXEC] [ArrayExpress] HTTP 200 156ms hits=0
+[2026-03-31 08:36:42][EXEC] [ChEMBL] HTTP 200 245ms hits=5
+[2026-03-31 08:36:42][EXEC] [PubChem] HTTP 404 408ms hits=0
+[2026-03-31 08:36:44][EXEC] [KEGG] HTTP 200 1473ms hits=0
+[2026-03-31 08:36:45][EXEC] [StringDB] HTTP 200 179ms hits=5
+[2026-03-31 08:36:45][EXEC] [Reactome] HTTP 404 380ms hits=0
+[2026-03-31 08:36:46][EXEC] [GeneOntology] HTTP 200 705ms hits=5
+[2026-03-31 08:36:47][EXEC] [DisGeNET] HTTP 200 213ms hits=0
+[2026-03-31 08:36:47][EXEC] [ClinicalTrials] HTTP 200 118ms hits=4
+[2026-03-31 08:36:49][EXEC] [OpenFDA] HTTP 404 988ms hits=0
+[2026-03-31 08:36:49][EXEC] [Wikidata] HTTP 200 221ms hits=0
+[2026-03-31 08:36:50][EXEC] [Wikipedia] HTTP 200 353ms hits=3
+[2026-03-31 08:36:50][EXEC] [HuggingFace] HTTP 200 139ms hits=0
+[2026-03-31 08:36:51][EXEC] [PapersWithCode] HTTP 200 612ms hits=0
+[2026-03-31 08:36:52][EXEC] [PDB] HTTP 400 386ms hits=0
+[2026-03-31 08:36:52][EXEC] [WHOGHO] HTTP 200 226ms hits=0
+[2026-03-31 08:36:53][EXEC] [BioGRID] HTTP 200 1064ms hits=3
+[2026-03-31 08:36:54][EXEC] [NCBI_Gene] HTTP 200 340ms hits=1
+[2026-03-31 08:36:55][EXEC] [NCBI_Protein] HTTP 200 382ms hits=5
+[2026-03-31 08:36:56][EXEC] [SemanticScholar] HTTP 429 493ms hits=0
+[2026-03-31 08:36:56][WRITE] Writing article for: mRNA vaccine induced autoimmunity mechanisms 2024
+[2026-03-31 08:38:08][WRITE] Article #3 written: 1418 words, 14 sources
