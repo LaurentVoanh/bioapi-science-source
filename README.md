@@ -1,5 +1,5 @@
 # BioAPI Research Portal
-
+to install add you api key mistral in config.php , you can use 3 differents api key.
 ## Installation
 1. Uploadez install.php sur votre serveur PHP 8.3+
 2. Visitez https://votre-domaine.fr/install.php
